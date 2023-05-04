@@ -1,0 +1,203 @@
+@import 'colors';
+@import 'animation';
+
+*,
+* ::after,
+* ::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: $bg-color;
+	font-size: 1.6em;
+}
+
+// h2 {
+// 	text-align: center;
+// 	text-transform: uppercase;
+// }
+
+// .underline {
+// 	margin: 0 auto 40px;
+// 	width: 60px;
+// 	height: 4px;
+// 	background-color: $main-color;
+// }
+
+.main-color-text {
+	color: $main-color;
+}
+
+.shadow-bg {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar {
+	text-transform: uppercase;
+	transition: background-color 0.6s;
+	z-index: 1;
+
+	.nav-link {
+		margin-left: 1rem;
+	}
+
+	.navbar-brand {
+		margin-left: 1rem;
+	}
+
+    .navbar-toggler {
+        border: none;
+    }
+
+	.navbar-toggler,
+	.navbar-brand {
+		font-size: 1em;
+	}
+
+	.nav-link,
+	i,
+	.navbar-brand {
+		color: $second-color;
+		transition: color 0.3s;
+	}
+
+	.navbar-brand:hover {
+		color: $main-color;
+	}
+
+	.nav-link:hover {
+		color: $main-color;
+	}
+
+	.fa-bars {
+		padding: 10px;
+	}
+
+	.navbar-nav {
+		.active {
+			color: $main-color;
+		}
+	}
+}
+
+.header {
+	color: $second-color;
+	text-align: center;
+
+	&__img {
+		position: relative;
+		height: 100vh;
+		background-image: url('../img/header-img-small.jpg');
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		z-index: 0;
+	}
+
+	&__shadow {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: -10;
+	}
+
+	&__text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		padding: 10px;
+		z-index: 5;
+
+		&-title {
+			font-size: 1.8em;
+			text-transform: uppercase;
+			font-family: 'Dancing Script', cursive;
+		}
+		&-paragraph {
+			font-size: 1em;
+		}
+
+		&-button {
+			padding: 0.8em;
+			font-size: 1em;
+			border-radius: 25%;
+		}
+	}
+
+	&__button {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 20px;
+		font-size: 30px;
+		color: $second-color;
+	}
+
+	.btn-outline-light {
+		text-transform: uppercase;
+	}
+}
+
+@media (min-width: 396px) {
+	.navbar {
+		.navbar-toggler,
+		.navbar-brand {
+			font-size: 1.2em;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar {
+		.navbar-toggler,
+		.navbar-brand {
+			font-size: 1.6em;
+		}
+	}
+
+    .header {
+        &__text {
+            &-title {
+                font-size: 2.6em;
+            }
+            &-paragraph {
+                font-size: 1.2em;
+            }
+    
+            &-button {
+                font-size: 1.2em;
+            }
+        }
+    
+        &__button {
+            font-size: 45px;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        .nav-link {
+            font-size: 1.2em;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+	.header {
+		&__img {
+			background-image: url('../img/header-img-big.jpg');
+		}
+	}
+}
