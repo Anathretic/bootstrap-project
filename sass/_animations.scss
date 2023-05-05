@@ -1,6 +1,13 @@
-.bounce-top {
-	display: block;
-	animation: bounce-top 2s infinite both;
+@keyframes rotate-right {
+    0% {
+        transform: scale(1.00);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1.00);
+    }
 }
 
 /* ----------------------------------------------

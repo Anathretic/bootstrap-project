@@ -13,107 +13,132 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:ital,wght@0,400;0,700;1,200&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="img/icons/heart-shortcut-icon.svg">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/e3d334fd4a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header class="header" id="home">
-        <nav id="navbar" class="navbar navbar-expand-lg position-fixed top-0 w-100 py-3">
-            <div class="container">
-                <a class="navbar-brand" href="#"><i class="fa-solid fa-heart"></i> for<span
-                        class="main-color-text">you</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav ms-auto">
-                        <a class="nav-link active" href="#">home</a>
-                        <a class="nav-link" href="#">o nas</a>
-                        <a class="nav-link" href="#">oferta</a>
-                        <a class="nav-link" href="#">zespół</a>
-                        <a class="nav-link" href="#">kontakt</a>
+    <nav class="nav">
+        <div class="nav__wrapper">
+            <a class="nav__icon" href="#"><img src="img/icons/heart-shortcut-icon.svg" alt=""></a>
+            <button class="burger-btn">
+                <div class="burger-btn__box">
+                    <div class="burger-btn__bars"></div>
+                </div>
+            </button>
+            <div class="nav-mobile">
+                <div class="nav-mobile__box">
+                    <div class="nav-mobile__items">
+                        <a href="#aboutus" class="nav-mobile__item" onclick="deleteMobileAnimation()">O nas</a>
+                        <a href="#offer" class="nav-mobile__item" onclick="deleteMobileAnimation()">Oferta</a>
+                        <a href="#team" class="nav-mobile__item" onclick="deleteMobileAnimation()">Zespół</a>
+                        <a href="#contact" class="nav-mobile__item" onclick="deleteMobileAnimation()">Kontakt</a>
                     </div>
                 </div>
             </div>
-        </nav>
-        <div class="header__img">
-            <div class="header__shadow"></div>
-            <div class="header__text">
-                <h1 class="header__text-title">spa <span class="main-color-text">& resort</span></h1>
-                <p class="header__text-paragraph">Pozwól się uwieść..</p>
-                <a href="#" type="button" class="header__text-button btn btn-outline-light border-2">kliknij!</a>
+            <div class="nav-desktop">
+                <div class="nav-desktop__box">
+                    <div class="nav-desktop__items">
+                        <a href="#aboutus" class="nav-desktop__item">O nas</a>
+                        <a href="#offer" class="nav-desktop__item">Oferta</a>
+                        <a href="#team" class="nav-desktop__item">Zespół</a>
+                        <a href="#contact" class="nav-desktop__item">Kontakt</a>
+                    </div>
+                </div>
             </div>
-            <a href="#aboutus" class="bounce-top"><i class="header__button fa-sharp fa-solid fa-chevron-down"></i></a>
         </div>
+    </nav>
+
+    <header class="header header-img">
+        <h1 class="header__heading">For You</h1>
+        <p class="header__text">Daj się uwieść..</p>
+        <a href="#offer" class="header__btn btn-special-animation">kliknij!</a>
+        <a href="#aboutus" class="header__chevron"><i class="fa-sharp fa-solid fa-chevron-down bounce-top"></i></a>
     </header>
 
-    <main>
-        <section id="aboutus" class="aboutus py-5">
-            <div class="container">
-                <h2 class="section-title">co zapewniamy?</h2>
-                <div class="underline"></div>
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 text-center mb-1 aboutus-hover" data-aos="zoom-in" data-aos-delay="100">
-                        <p><i class="fa-solid fa-mobile-screen-button"></i></p>
-                        <p class="aboutus-card-title">autorskie zabiegi</p>
-                        <p class="aboutus-card-text">XXX</p>
+    <main class="main">
+        <section class="content section-padding" id="aboutus">
+            <div class="wrapper">
+                <h2 class="section-heading">Catch the dreams!</h2>
+                <div class="content__box">
+                    <div class="content__box-img">
+                        <img src="img/palm_small.jpg" alt="Palms on the tropical beach" class="content__img">
                     </div>
-                    <div class="col-sm-6 col-md-4 text-center mb-1 aboutus-hover" data-aos="zoom-in" data-aos-delay="200">
-                        <p><i class="fa-solid fa-desktop"></i></p>
-                        <p class="aboutus-card-title">naturalne kosmetyki</p>
-                        <p class="aboutus-card-text">XXX</p>
+                    <div class="content__box-text">
+                        <h3 class="content__title">Breathtaking landscapes</h3>
+                        <p class="content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab cum
+                            obcaecati aliquam dignissimos blanditiis eaque? Fuga eveniet, ex, nisi perferendis,
+                            reiciendis itaque perspiciatis minima id ipsam accusantium assumenda esse deleniti?</p>
                     </div>
-                    <div class="col-sm-6 col-md-4 text-center mb-1 aboutus-hover" data-aos="zoom-in" data-aos-delay="300">
-                        <p><i class="fa-solid fa-file-code"></i></p>
-                        <p class="aboutus-card-title">nastrojowe światło</p>
-                        <p class="aboutus-card-text">XXX</p>
+                </div>
+                <div class="content__box">
+                    <div class="content__box-img content__box-img--right">
+                        <img src="img/houses_small.jpg" alt="Tropical houses above the sea" class="content__img">
                     </div>
-                    <div class="col-sm-6 col-md-4 text-center mb-1 aboutus-hover" data-aos="zoom-in" data-aos-delay="400">
-                        <p><i class="fa-solid fa-paw"></i></p>
-                        <p class="aboutus-card-title">odprężający zapach</p>
-                        <p class="aboutus-card-text">XXX</p>
+                    <div class="content__box-text content__box-text--right">
+                        <h3 class="content__title">Cozy atmosphere</h3>
+                        <p class="content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Sapiente temporibus voluptates suscipit vitae. Eum magni officia itaque voluptatem soluta
+                            quam. Quasi iure omnis eaque quibusdam doloremque praesentium molestiae laboriosam mollitia!
+                        </p>
                     </div>
-                    <div class="col-sm-6 col-md-4 text-center mb-1 aboutus-hover" data-aos="zoom-in" data-aos-delay="500">
-                        <p><i class="fa-solid fa-burger"></i></p>
-                        <p class="aboutus-card-title">delikatny dotyk</p>
-                        <p class="aboutus-card-text">XXX</p>
+                </div>
+                <div class="content__box">
+                    <div class="content__box-img">
+                        <img src="img/surf_small.jpg" alt="People who surfing the wave" class="content__img">
                     </div>
-                    <div class="col-sm-6 col-md-4 text-center mb-1 aboutus-hover" data-aos="zoom-in" data-aos-delay="600">
-                        <p><i class="fa-solid fa-champagne-glasses"></i></p>
-                        <p class="aboutus-card-title">pełen profesjonalizm</p>
-                        <p class="aboutus-card-text">XXX</p>
+                    <div class="content__box-text">
+                        <h3 class="content__title">Beautiful memories</h3>
+                        <p class="content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab cum
+                            obcaecati aliquam dignissimos blanditiis eaque? Fuga eveniet, ex, nisi perferendis,
+                            reiciendis itaque perspiciatis minima id ipsam accusantium assumenda esse deleniti?</p>
+                    </div>
+                <div class="content__box">
+                    <div class="content__box-img">
+                        <img src="img/surf_small.jpg" alt="People who surfing the wave" class="content__img">
+                    </div>
+                    <div class="content__box-text">
+                        <h3 class="content__title">Beautiful memories</h3>
+                        <p class="content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab cum
+                            obcaecati aliquam dignissimos blanditiis eaque? Fuga eveniet, ex, nisi perferendis,
+                            reiciendis itaque perspiciatis minima id ipsam accusantium assumenda esse deleniti?</p>
+                    </div>
+                <div class="content__box">
+                    <div class="content__box-img">
+                        <img src="img/surf_small.jpg" alt="People who surfing the wave" class="content__img">
+                    </div>
+                    <div class="content__box-text">
+                        <h3 class="content__title">Beautiful memories</h3>
+                        <p class="content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab cum
+                            obcaecati aliquam dignissimos blanditiis eaque? Fuga eveniet, ex, nisi perferendis,
+                            reiciendis itaque perspiciatis minima id ipsam accusantium assumenda esse deleniti?</p>
+                    </div>
+                <div class="content__box">
+                    <div class="content__box-img">
+                        <img src="img/surf_small.jpg" alt="People who surfing the wave" class="content__img">
+                    </div>
+                    <div class="content__box-text">
+                        <h3 class="content__title">Beautiful memories</h3>
+                        <p class="content__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab cum
+                            obcaecati aliquam dignissimos blanditiis eaque? Fuga eveniet, ex, nisi perferendis,
+                            reiciendis itaque perspiciatis minima id ipsam accusantium assumenda esse deleniti?</p>
+                    </div>
+                </div>
+                <div class="content__box">
+                    <div class="content__box-img content__box-img--right">
+                        <img src="img/couple_small.jpg" alt="Romantic kiss on the beach" class="content__img">
+                    </div>
+                    <div class="content__box-text content__box-text--right">
+                        <h3 class="content__title">Unforgettable moments</h3>
+                        <p class="content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Sapiente temporibus voluptates suscipit vitae. Eum magni officia itaque voluptatem soluta
+                            quam. Quasi iure omnis eaque quibusdam doloremque praesentium molestiae laboriosam mollitia!
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="aboutus-img py-5">
-            <div class="aboutus-shadow"></div>
-            <div class="container py-4">
-                <h2 class="section-title">dasz się skusić..?</h2>
-                <div class="underline"></div>
-                <div class="row">
-                    <div class="col-lg-4 text-center aboutus-hero-item" data-aos="zoom-in" data-aos-delay="650">
-                        <p>IMG</p>
-                        <p class="aboutus-hero-title">Title</p>
-                        <p class="aboutus-hero-text">~ 60 words</p>
-                    </div>
-                    <div class="col-lg-4 text-center aboutus-hero-item" data-aos="zoom-in" data-aos-delay="750">
-                        <p>IMG</p>
-                        <p class="aboutus-hero-title">Title</p>
-                        <p class="aboutus-hero-text">~ 60 words</p>
-                    </div>
-                    <div class="col-lg-4 text-center aboutus-hero-item" data-aos="zoom-in" data-aos-delay="850">
-                        <p>IMG</p>
-                        <p class="aboutus-hero-title">Title</p>
-                        <p class="aboutus-hero-text">~ 60 words</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"

@@ -1,0 +1,31 @@
+@use 'colors';
+
+@media (min-height: 576px) {
+    .header {
+        &__chevron {
+            display: block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            font-size: 30px;
+            color: colors.$white-color;
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .header {
+        &__heading {
+            font-size: 5rem;
+        }
+    
+        &__text {
+            font-size: 1.8rem;
+        }
+    
+        &__btn {
+            font-size: 1.6rem;
+        }
+    }
+}
