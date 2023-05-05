@@ -56,8 +56,21 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #ebecf2;
+  background-color: #FFDAC6;
   font-size: 1.6em;
+}
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.6em;
+}
+
+.underline {
+  margin: 0 auto 40px;
+  width: 60px;
+  height: 4px;
+  background-color: #ad7e64;
 }
 
 .main-color-text {
@@ -159,6 +172,50 @@ body {
   text-transform: uppercase;
 }
 
+.aboutus i {
+  margin-top: 20px;
+  font-size: 30px;
+}
+.aboutus .aboutus-card-title {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.aboutus .aboutus-card-text {
+  font-size: 14px;
+}
+.aboutus .aboutus-hover {
+  transition: color 0.5s;
+}
+.aboutus .aboutus-hover:hover {
+  color: #ad7e64;
+}
+
+.aboutus-img {
+  position: relative;
+  background-image: url("../img/aboutus-small.jpg");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  z-index: 0;
+}
+.aboutus-img .aboutus-shadow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -5;
+}
+.aboutus-img .aboutus-hero-item {
+  margin: 10px 0;
+}
+.aboutus-img .aboutus-hero-item i {
+  font-size: 36px;
+}
+.aboutus-img .aboutus-hero-item .aboutus-hero-title {
+  font-size: 24px;
+}
+
 @media (min-width: 396px) {
   .navbar .navbar-toggler,
   .navbar .navbar-brand {
@@ -186,6 +243,9 @@ body {
 @media (min-width: 992px) {
   .navbar .nav-link {
     font-size: 1.2em;
+  }
+  .aboutus-img {
+    background-image: url("../img/aboutus-big.jpg");
   }
 }
 @media (min-width: 1200px) {
