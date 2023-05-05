@@ -16,7 +16,7 @@
  */
 @keyframes bounce-top {
   0% {
-    transform: translateY(-45px);
+    transform: translateY(-100px);
     animation-timing-function: ease-in;
     opacity: 1;
   }
@@ -24,19 +24,19 @@
     opacity: 1;
   }
   40% {
-    transform: translateY(-24px);
+    transform: translateY(-80px);
     animation-timing-function: ease-in;
   }
   65% {
-    transform: translateY(-12px);
+    transform: translateY(-60px);
     animation-timing-function: ease-in;
   }
   25%, 55%, 75%, 87% {
-    transform: translateY(0px);
+    transform: translateY(-50px);
     animation-timing-function: ease-out;
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(-50px);
     animation-timing-function: ease-out;
     opacity: 1;
   }
@@ -127,7 +127,6 @@ body {
   background-image: url("../img/header-img-small.jpg");
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
   z-index: 0;
 }
 .header__shadow {
@@ -163,7 +162,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 50px;
+  bottom: 20px;
   font-size: 30px;
   color: #fff;
 }
