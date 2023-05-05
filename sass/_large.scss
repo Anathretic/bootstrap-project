@@ -1,6 +1,10 @@
 @use 'colors';
 
 @media (min-width: 1024px) {
+    .header-img {
+        background-image: colors.$shadow, url('../img/header-img-big.jpg');
+    }
+
     .nav {
         .nav-mobile,
         .burger-btn {
