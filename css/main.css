@@ -293,7 +293,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0;
+    bottom: 20px;
     font-size: 30px;
     color: #eeeeee;
   }
