@@ -61,8 +61,8 @@ html {
 }
 
 body {
-  background-color: #c59880;
-  color: #000000;
+  background-color: rgba(35, 35, 35, 0.6);
+  color: #eeeeee;
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
 }
@@ -75,6 +75,10 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+
+.container {
+  padding-top: 2.5em;
 }
 
 .btn-special-animation {
@@ -101,6 +105,20 @@ body {
   transform-origin: left;
 }
 
+.section-title {
+  margin-top: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.underline {
+  margin: 0 auto 3em;
+  width: 60px;
+  height: 2px;
+  background-color: #3b97b3;
+}
+
 .section-padding {
   padding: 6em 2em;
 }
@@ -108,16 +126,12 @@ body {
 .section-heading {
   position: relative;
   margin-bottom: 2em;
-  color: #FFDAC6;
+  color: #3b97b3;
   font-size: 3rem;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
-}
-
-.special-heading {
-  margin-top: 4em;
 }
 
 .nav-shadow {
@@ -226,7 +240,7 @@ body {
   transition: color 0.2s;
 }
 .nav .nav-mobile__item:hover {
-  color: #8a6451;
+  color: #257791;
 }
 
 @keyframes navItemsAnimation {
@@ -273,7 +287,7 @@ body {
 .header__btn {
   margin-top: 2em;
   padding: 0.8em 1.6em;
-  background-color: #8a6451;
+  background-color: #3b97b3;
   border: none;
   border-radius: 25%;
   font-size: 1.6rem;
@@ -281,10 +295,68 @@ body {
   text-transform: uppercase;
 }
 .header__btn::before {
-  background-color: #583b2c;
+  background-color: #1E5F74;
 }
 .header__chevron {
   display: none;
+}
+
+.aboutus-hero {
+  padding: 2em 0;
+}
+.aboutus-hero__item {
+  padding: 1em;
+  margin: 2em auto;
+}
+.aboutus-hero__img {
+  margin: 1em 0;
+  width: 90%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 8px;
+  box-shadow: 3px 3px 10px rgb(77, 77, 77);
+}
+.aboutus-hero__title {
+  margin: 2em 0;
+  font-size: 1.3em;
+  background-color: #1E5F74;
+  border-radius: 8px;
+}
+.aboutus-hero__text {
+  font-size: 0.9em;
+  margin: 14px;
+}
+
+.aboutus-card {
+  transition: color 0.5s;
+}
+.aboutus-card__img {
+  padding: 1em;
+  font-size: 30px;
+}
+.aboutus-card__title {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.aboutus-card__text {
+  font-size: 14px;
+}
+.aboutus-card:hover {
+  color: #3b97b3;
+}
+
+.aboutus-img {
+  position: relative;
+  z-index: 0;
+}
+.aboutus-img .aboutus-shadow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -5;
 }
 
 @media (min-height: 576px) {
@@ -310,6 +382,9 @@ body {
   }
 }
 @media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
   .header__heading {
     font-size: 6rem;
   }
@@ -335,6 +410,9 @@ body {
   }
 }
 @media (min-width: 1024px) {
+  .section-title {
+    font-size: 3.5rem;
+  }
   .header-img {
     background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("../img/header-img-big.jpg");
   }
@@ -378,14 +456,14 @@ body {
   .nav .nav-desktop__item::after {
     bottom: -2px;
     right: -8px;
-    border-bottom: 2px solid #583b2c;
-    border-right: 2px solid #583b2c;
+    border-bottom: 2px solid #1E5F74;
+    border-right: 2px solid #1E5F74;
   }
   .nav .nav-desktop__item::before {
     top: -2px;
     left: -8px;
-    border-top: 2px solid #583b2c;
-    border-left: 2px solid #583b2c;
+    border-top: 2px solid #1E5F74;
+    border-left: 2px solid #1E5F74;
   }
   .nav .nav-desktop__item:hover::before, .nav .nav-desktop__item:hover::after {
     width: 50px;
