@@ -1,10 +1,8 @@
 let BODY
 let NAV
-let MOBILE_NAV
-let DESKTOP_NAV
-let MOBILE_NAV_BTN
-let MOBILE_ALL_NAV_ITEMS
-let DESKTOP_ALL_NAV_ITEMS
+let NAV_LIST
+let NAV_LIST_BTN
+let ALL_NAV_ITEMS
 let NAV_ICON
 let DELAY_TIME
 
@@ -16,11 +14,9 @@ const main = () => {
 const prepareDOMElements = () => {
 	BODY = document.querySelector('body')
 	NAV = document.querySelector('.nav')
-	MOBILE_NAV = document.querySelector('.nav-mobile__box')
-	DESKTOP_NAV = document.querySelector('.nav-desktop__box')
-	MOBILE_NAV_BTN = document.querySelector('.burger-btn')
-	MOBILE_ALL_NAV_ITEMS = document.querySelectorAll('.nav-mobile__item')
-	DESKTOP_ALL_NAV_ITEMS = document.querySelectorAll('.nav-desktop__item')
+	NAV_LIST = document.querySelector('.nav__list')
+	NAV_LIST_BTN = document.querySelector('.burger-btn')
+	ALL_NAV_ITEMS = document.querySelectorAll('.nav__item')
 	NAV_ICON = document.querySelector('.nav__icon')
 	DELAY_TIME = 1
 }
@@ -28,62 +24,34 @@ const prepareDOMElements = () => {
 const prepareDOMEvents = () => {
 	window.addEventListener('scroll', addShadow)
 	NAV_ICON.addEventListener('click', () => {
-		MOBILE_NAV.classList.remove('nav-mobile__box--active')
+		NAV_LIST.classList.remove('nav__list--active')
+		mobileBlock()
 	})
-	MOBILE_NAV_BTN.addEventListener('click', handleMobileNav)
-	handleDesktopNav()
+	NAV_LIST_BTN.addEventListener('click', handleNav)
 }
 
-const handleDesktopNav = () => {
-	DESKTOP_NAV.classList.add('nav-desktop__box--active')
-	handleDesktopNavItemsAnimation()
-}
-
-const handleMobileNav = () => {
-	MOBILE_NAV.classList.toggle('nav-mobile__box--active')
+const handleNav = () => {
+	NAV_LIST.classList.toggle('nav__list--active')
 	BODY.classList.remove('scroll-block')
 
-	MOBILE_ALL_NAV_ITEMS.forEach(item => {
+	ALL_NAV_ITEMS.forEach(item => {
 		item.addEventListener('click', () => {
-			MOBILE_NAV.classList.remove('nav-mobile__box--active')
+			NAV_LIST.classList.remove('nav__list--active')
 			BODY.classList.remove('scroll-block')
 		})
 	})
 
-	handleMobileNavItemsAnimation()
 	mobileBlock()
 }
 
 const mobileBlock = () => {
-	if (MOBILE_NAV.classList.contains('nav-mobile__box--active')) {
+	if (NAV_LIST.classList.contains('nav__list--active')) {
 		if (BODY.classList.contains('scroll-block')) {
 			BODY.classList.remove('scroll-block')
 		} else {
 			BODY.classList.add('scroll-block')
 		}
 	}
-}
-
-const handleDesktopNavItemsAnimation = () => {
-	DESKTOP_ALL_NAV_ITEMS.forEach(navItemsAnimation)
-	DELAY_TIME = 0
-}
-
-const handleMobileNavItemsAnimation = () => {
-	MOBILE_ALL_NAV_ITEMS.forEach(navItemsAnimation)
-	DELAY_TIME = 0
-}
-
-const navItemsAnimation = item => {
-	item.classList.toggle('nav-items-animation')
-	item.style.animationDelay = '.' + DELAY_TIME + 's'
-	DELAY_TIME++
-}
-
-const deleteMobileAnimation = () => {
-	MOBILE_ALL_NAV_ITEMS.forEach(item => {
-		item.classList.remove('nav-items-animation')
-	})
 }
 
 const addShadow = () => {

@@ -1,96 +1,68 @@
 @use 'colors';
 
 @media (min-width: 1024px) {
-    .section-title {
-        font-size: 3.5rem;
-    }
+	.section-title {
+		font-size: 3.5rem;
+	}
 
-    .header-img {
-        background-image: colors.$shadow, url('../img/header-img-big.jpg');
-    }
+	.header-img {
+		background-image: colors.$shadow, url('../img/header-img-big.jpg');
+	}
 
-    .nav {
-        .nav-mobile,
-        .burger-btn {
-            display: none;
-        }
-
-        .nav-desktop {
-			display: flex;
-
-			&__box {
-				top: 0;
-				display: flex;
-				align-items: center;
-				justify-content: end;
-				width: 100%;
-				height: 80px;
-				transform: translateX(100%);
-				transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
-				background: none;
-
-				&--active {
-					transform: translateX(0);
-				}
-			}
-
-            &__item {
-                position: relative;
-                margin: 0 0.5em 1em 0.5em;
-                padding: 0.5em 1em;
-                color: colors.$white-color;
-                font-size: 2.4rem;
-                text-decoration: none;
-
-                &::after,
-                &::before {
-                    content: '';
-                    position: absolute;
-                    width: 0;
-                    height: 0;
-                    opacity: 0;
-                    transition: 0.3s;
-                }
-
-                &::after {
-                    bottom: -2px;
-                    right: -8px;
-                    border-bottom: 2px solid colors.$darker-special-color;
-                    border-right: 2px solid colors.$darker-special-color;
-                }
-
-                &::before {
-                    top: -2px;
-                    left: -8px;
-                    border-top: 2px solid colors.$darker-special-color;
-                    border-left: 2px solid colors.$darker-special-color;
-                }
-
-                &:hover::before,
-                &:hover::after {
-                    width: 50px;
-                    height: 50%;
-                    opacity: 1;
-                }
-            }
+	.nav {
+		.burger-btn {
+			display: none;
 		}
-    }
-    .header {
-        &__heading {
-            font-size: 10rem;
-        }
-    
-        &__text {
-            font-size: 2.4rem;
-        }
-    
-        &__btn {
-            font-size: 2.2rem;
-        }
 
-        &__chevron {
-            font-size: 50px;
-            
-        }
-    }
+		&__list {
+			flex-direction: row;
+			justify-content: end;
+			position: absolute;
+			height: 80px;
+			padding: 0.5em;
+			background: none;
+			transform: translateX(0);
+			opacity: 1;
+			overflow: hidden;
+		}
+
+		&__item {
+			margin-top: 0;
+			font-size: 2rem;
+		}
+
+		&__item:first-of-type {
+			margin-top: 0;
+		}
+
+		&__link {
+			padding: 1em 1.2em;
+		}
+	}
+
+	.header {
+		&__heading {
+			font-size: 10rem;
+		}
+
+		&__text {
+			font-size: 2.4rem;
+		}
+
+		&__btn {
+			font-size: 2.2rem;
+		}
+
+		&__chevron {
+			font-size: 50px;
+		}
+	}
+}
+
+@media (min-width: 1220px) {
+	.nav {
+		&__item {
+			font-size: 2.2rem;
+		}
+	}
 }
