@@ -309,7 +309,7 @@ body {
   display: none;
 }
 
-.aboutus-icons {
+.aboutus-cards {
   padding: 6em 4em;
   background-color: rgba(58, 54, 54, 0.1647058824);
 }
@@ -324,6 +324,20 @@ body {
 }
 .aboutus-card__text {
   font-size: 14px;
+}
+
+.aboutus-hero-images {
+  position: relative;
+  padding: 6em 0;
+  z-index: 0;
+}
+.aboutus-hero-images .aboutus-shadow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: -5;
 }
 
 .aboutus-hero__item {
@@ -351,20 +365,6 @@ body {
 .aboutus-hero__text {
   font-size: 0.9em;
   margin: 14px;
-}
-
-.aboutus-img {
-  position: relative;
-  padding: 6em 0;
-  z-index: 0;
-}
-.aboutus-img .aboutus-shadow {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
-  z-index: -5;
 }
 
 @media (min-width: 400px) and (max-height: 450px) {

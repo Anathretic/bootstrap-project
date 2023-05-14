@@ -297,7 +297,7 @@ body {
 	}
 }
 
-.aboutus-icons {
+.aboutus-cards {
 	padding: 6em 4em;
 	background-color: #3a36362a;
 }
@@ -315,6 +315,21 @@ body {
 
 	&__text {
 		font-size: 14px;
+	}
+}
+
+.aboutus-hero-images {
+	position: relative;
+	padding: 6em 0;
+	z-index: 0;
+
+	.aboutus-shadow {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.75);
+		z-index: -5;
 	}
 }
 
@@ -347,20 +362,5 @@ body {
 	&__text {
 		font-size: 0.9em;
 		margin: 14px;
-	}
-}
-
-.aboutus-img {
-	position: relative;
-	padding: 6em 0;
-	z-index: 0;
-
-	.aboutus-shadow {
-		position: absolute;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		background-color: rgba(0, 0, 0, 0.75);
-		z-index: -5;
 	}
 }
