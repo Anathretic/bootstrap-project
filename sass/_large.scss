@@ -1,5 +1,16 @@
 @use 'colors';
 
+@media (min-width:992px) {
+	.aboutus-hero {
+		&__item:first-of-type {
+			margin-left: -30px;
+		}
+		&__item:last-of-type {
+			margin-right: -30px;
+		}
+	}
+}
+
 @media (min-width: 1024px) {
 	.section-title {
 		font-size: 3.5rem;
@@ -12,6 +23,10 @@
 	.nav {
 		.burger-btn {
 			display: none;
+		}
+
+		&__icon {
+			top: 6px;
 		}
 
 		&__list {
@@ -57,7 +72,7 @@
 			font-size: 50px;
 		}
 	}
-}
+}	
 
 @media (min-width: 1220px) {
 	.nav {

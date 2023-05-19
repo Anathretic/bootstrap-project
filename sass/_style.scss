@@ -21,6 +21,10 @@ body {
 	font-size: 1.6rem;
 }
 
+.section {
+	padding: 6em 4em;
+}
+
 .scroll-block {
 	overflow: hidden;
 }
@@ -74,10 +78,6 @@ body {
 	background-color: colors.$main-color;
 }
 
-.section-padding {
-	padding: 6em 2em;
-}
-
 .section-heading {
 	position: relative;
 	margin-bottom: 2em;
@@ -116,13 +116,8 @@ body {
 		position: absolute;
 		top: 8px;
 		left: 2rem;
-		padding: 1em;
+		padding: 0.5em;
 		z-index: 1000;
-
-		img {
-			display: block;
-			animation: rotate-right 10s infinite linear;
-		}
 	}
 
 	.burger-btn {
@@ -229,20 +224,6 @@ body {
 	}
 }
 
-@keyframes navItemsAnimation {
-	from {
-		transform: translateX(200%);
-	}
-
-	to {
-		transform: translateX(0);
-	}
-}
-
-.nav-items-animation {
-	animation: navItemsAnimation 1s both;
-}
-
 .header-img {
 	background-image: colors.$shadow, url('../img/header-img-small.jpg');
 }
@@ -298,7 +279,6 @@ body {
 }
 
 .aboutus-cards {
-	padding: 6em 4em;
 	background-color: #3a36362a;
 }
 
@@ -334,6 +314,8 @@ body {
 }
 
 .aboutus-hero {
+	padding: 2em;
+
 	&__item {
 		padding: 2em;
 		margin: 2em auto;
@@ -356,11 +338,72 @@ body {
 		margin: 2em 0;
 		font-size: 1.3em;
 		border-bottom: 1px solid colors.$darker-special-color;
-		border-radius: 8px;
 	}
 
 	&__text {
 		font-size: 0.9em;
 		margin: 14px;
+	}
+}
+
+.team {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 0;
+		padding: 1em;
+	}
+
+	&__box:first-of-type {
+		margin: 0;
+	}
+
+	&__img,
+	&__title {
+		margin: 1em 0;
+	}
+
+	&__img {
+		width: 100%;
+		border-radius: 8px;
+		box-shadow: 3px 3px 10px rgb(77, 77, 77);
+	}
+
+	&__title {
+		color: colors.$main-color;
+		font-weight: 300;
+		font-size: 2rem;
+		text-align: center;
+
+		a {
+			color: colors.$special-color;
+		}
+	}
+
+	&__text {
+		margin-left: 0.15em;
+		font-size: 1.4rem;
+	}
+
+	.carousel-item {
+		position: relative;
+		height: 600px;
+	}
+
+	.carousel-caption {
+		position: absolute;
+		height: 140px;
+		left: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+
+		h5 {
+			margin: 1em 0;
+			font-size: 2.2rem;
+		}
+	}
+
+	.carousel-indicators {
+		padding-bottom: 35px;
 	}
 }
