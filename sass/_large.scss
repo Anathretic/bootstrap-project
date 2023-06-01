@@ -1,4 +1,5 @@
 @use 'colors';
+@use 'mixin';
 
 @media (min-width: 992px) {
 	.aboutus-hero {
@@ -86,45 +87,6 @@
 	}
 
 	.cards {
-		&__icon {
-			position: relative;
-			display: grid;
-			background-image: url('../img/background-icons.jpg');
-			padding: 2em;
-			border-radius: 8px;
-			z-index: 5;
-
-			&--one {
-				grid-row: 1/2;
-				grid-column: 4/7;
-			}
-
-			&--two {
-				grid-row: 2/3;
-				grid-column: 1/4;
-			}
-
-			&--three {
-				grid-row: 3/4;
-				grid-column: 4/7;
-			}
-
-			&--four {
-				grid-row: 4/5;
-				grid-column: 1/4;
-			}
-
-			&--five {
-				grid-row: 5/6;
-				grid-column: 4/7;
-			}
-
-			&--six {
-				grid-row: 6/7;
-				grid-column: 1/4;
-			}
-		}
-
 		&__box {
 			display: grid;
 			grid-template-columns: repeat(6, 1fr);
@@ -132,34 +94,121 @@
 		}
 
 		&__card {
+			&--one::before,
+			&--two::before,
+			&--three::before,
+			&--four::before,
+			&--five::before,
+			&--six::before {
+				background-image: url('../img/background-icons.jpg');
+			}
+
+			&--one::before,
+			&--three::before,
+			&--five::before {
+				left: 20px;
+			}
+			
+			&--one:hover::before,
+			&--three:hover::before,
+			&--five:hover::before {
+				left: 0px;
+			}
+
+			&--two::before,
+			&--four::before,
+			&--six::before {
+				right: 20px;
+			}
+
+			&--two:hover::before,
+			&--four:hover::before,
+			&--six:hover::before {
+				right: 0px;
+			}
+			
 			&--one {
 				grid-row: 1/2;
 				grid-column: 1/4;
+
+				&::before {
+					content: '';
+					@include mixin.specialCard;
+				}
+
+				&:hover::before {
+					transform: translateX(100%);
+				}
 			}
 
 			&--two {
 				grid-row: 2/3;
 				grid-column: 4/7;
+
+				&::before {
+					content: '';
+					@include mixin.specialCard;
+				}
+
+				&:hover::before {
+					transform: translateX(-100%);
+				}
 			}
 
 			&--three {
 				grid-row: 3/4;
 				grid-column: 1/4;
+
+				&::before {
+					content: '';
+					@include mixin.specialCard;
+				}
+
+				&:hover::before {
+					transform: translateX(100%);
+				}
 			}
 
 			&--four {
 				grid-row: 4/5;
 				grid-column: 4/7;
+
+				&::before {
+					content: '';
+					@include mixin.specialCard;
+				}
+
+				&:hover::before {
+					transform: translateX(-100%);
+				}
 			}
 
 			&--five {
 				grid-row: 5/6;
 				grid-column: 1/4;
+
+				&::before {
+					content: '';
+					@include mixin.specialCard;
+				}
+
+				&:hover::before {
+					transform: translateX(100%);
+				}
 			}
 
 			&--six {
 				grid-row: 6/7;
 				grid-column: 4/7;
+
+				&::before {
+					content: '';
+					@include mixin.specialCard;
+				}
+
+				&:hover::before {
+					transform: translateX(-100%);
+				}
 			}
 
 			&--seven,
