@@ -24,22 +24,9 @@ body {
 	font-size: 1.6rem;
 }
 
-.body-shadow,
-.section {
-	background-color: rgba(0, 0, 0, 0.75);
-}
-
-.body-shadow {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	z-index: -5;
-}
-
 .section {
 	padding: 6em 0;
+	background-color: rgba(0, 0, 0, 0.75);
 }
 
 .scroll-block {
@@ -298,8 +285,6 @@ body {
 }
 
 .cards {
-	background-color: black;
-
 	&__icon {
 		display: none;
 	}
@@ -358,6 +343,36 @@ body {
 
 		&--six {
 			grid-row: 6/7;
+			grid-column: 1/-1;
+		}
+
+		&--seven {
+			grid-row: 1/2;
+			grid-column: 1/-1;
+		}
+
+		&--eight {
+			grid-row: 2/3;
+			grid-column: 1/-1;
+		}
+		
+		&--nine {
+			grid-row: 3/4;
+			grid-column: 1/-1;
+		}
+		
+		&--ten {
+			grid-row: 4/5;
+			grid-column: 1/-1;
+		}
+		
+		&--eleven {
+			grid-row: 5/6;
+			grid-column: 1/-1;
+		}
+
+		&--twelve {
+			grid-row: 1/2;
 			grid-column: 1/-1;
 		}
 

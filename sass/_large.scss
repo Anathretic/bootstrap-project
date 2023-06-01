@@ -163,6 +163,15 @@
 				grid-row: 6/7;
 				grid-column: 4/7;
 			}
+
+			&--seven,
+			&--eight,
+			&--nine,
+			&--ten,
+			&--eleven,
+			&--twelve {
+				padding: 6em;
+			}
 		}
 	}
 }
