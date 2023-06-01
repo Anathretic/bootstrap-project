@@ -267,7 +267,7 @@ body {
 	&__btn {
 		margin-top: 2em;
 		padding: 0.8em 1.6em;
-		background-color: colors.$main-color;
+		background-color: colors.$special-color;
 		border: none;
 		border-radius: 25%;
 		font-size: 1.6rem;
@@ -311,9 +311,16 @@ body {
 		cursor: pointer;
 		z-index: 5;
 
-		&:hover {
-			border: 1px solid colors.$special-color;
-			transform: scale(1.01);
+		&--one,
+		&--two,
+		&--three,
+		&--four,
+		&--five,
+		&--six {
+			&:hover {
+				border: 1px solid colors.$special-color;
+				transform: scale(1.01);
+			}
 		}
 
 		&--one {
@@ -346,6 +353,15 @@ body {
 			grid-column: 1/-1;
 		}
 
+		&--seven,
+		&--eight,
+		&--nine,
+		&--ten,
+		&--eleven,
+		&--twelve {
+			padding: 4em;
+		}
+
 		&--seven {
 			grid-row: 1/2;
 			grid-column: 1/-1;
@@ -355,17 +371,17 @@ body {
 			grid-row: 2/3;
 			grid-column: 1/-1;
 		}
-		
+
 		&--nine {
 			grid-row: 3/4;
 			grid-column: 1/-1;
 		}
-		
+
 		&--ten {
 			grid-row: 4/5;
 			grid-column: 1/-1;
 		}
-		
+
 		&--eleven {
 			grid-row: 5/6;
 			grid-column: 1/-1;

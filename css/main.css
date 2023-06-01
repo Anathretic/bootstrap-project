@@ -108,13 +108,13 @@ body {
   margin: 0 auto 3em;
   width: 60px;
   height: 2px;
-  background-color: #c0b448;
+  background-color: #fed700;
 }
 
 .section-heading {
   position: relative;
   margin-bottom: 2em;
-  color: #c0b448;
+  color: #fed700;
   font-size: 3rem;
   font-weight: 300;
   text-transform: uppercase;
@@ -235,10 +235,10 @@ body {
   transition: color 0.3s;
 }
 .nav__link:hover {
-  color: #a0971d;
+  color: #d2b200;
 }
 .nav__link--active {
-  color: #a0971d;
+  color: #d2b200;
 }
 
 .header-img {
@@ -273,7 +273,7 @@ body {
 .header__btn {
   margin-top: 2em;
   padding: 0.8em 1.6em;
-  background-color: #c0b448;
+  background-color: #d2b200;
   border: none;
   border-radius: 25%;
   font-size: 1.6rem;
@@ -281,7 +281,7 @@ body {
   text-transform: uppercase;
 }
 .header__btn::before {
-  background-color: #857a17;
+  background-color: #b19600;
 }
 .header__chevron {
   display: none;
@@ -311,8 +311,8 @@ body {
   cursor: pointer;
   z-index: 5;
 }
-.cards__card:hover {
-  border: 1px solid #a0971d;
+.cards__card--one:hover, .cards__card--two:hover, .cards__card--three:hover, .cards__card--four:hover, .cards__card--five:hover, .cards__card--six:hover {
+  border: 1px solid #d2b200;
   transform: scale(1.01);
 }
 .cards__card--one {
@@ -338,6 +338,9 @@ body {
 .cards__card--six {
   grid-row: 6/7;
   grid-column: 1/-1;
+}
+.cards__card--seven, .cards__card--eight, .cards__card--nine, .cards__card--ten, .cards__card--eleven, .cards__card--twelve {
+  padding: 4em;
 }
 .cards__card--seven {
   grid-row: 1/2;
@@ -369,7 +372,7 @@ body {
 }
 .cards__card h3 {
   margin-bottom: 0.4em;
-  color: #a0971d;
+  color: #d2b200;
   text-transform: uppercase;
 }
 .cards__card p {
@@ -389,8 +392,8 @@ body {
 .aboutus-hero__item {
   padding: 2em;
   margin: 2em auto;
-  border-top: 1px solid #a0971d;
-  border-bottom: 1px solid #a0971d;
+  border-top: 1px solid #d2b200;
+  border-bottom: 1px solid #d2b200;
   border-radius: 8px;
 }
 .aboutus-hero__img {
@@ -405,7 +408,7 @@ body {
 .aboutus-hero__title {
   margin: 2em 0;
   font-size: 1.3em;
-  border-bottom: 1px solid #857a17;
+  border-bottom: 1px solid #b19600;
 }
 .aboutus-hero__text {
   font-size: 0.9em;
@@ -590,42 +593,41 @@ body {
     font-size: 2.2rem;
   }
   .cards__icon {
+    position: relative;
     display: grid;
+    background-image: url("../img/background-icons.jpg");
     padding: 2em;
-    width: 250px;
-    height: 250px;
+    border-radius: 8px;
+    z-index: 5;
   }
   .cards__icon--one {
     grid-row: 1/2;
-    grid-column: 5/6;
+    grid-column: 4/7;
   }
   .cards__icon--two {
     grid-row: 2/3;
-    grid-column: 2/3;
+    grid-column: 1/4;
   }
   .cards__icon--three {
     grid-row: 3/4;
-    grid-column: 5/6;
+    grid-column: 4/7;
   }
   .cards__icon--four {
     grid-row: 4/5;
-    grid-column: 2/3;
+    grid-column: 1/4;
   }
   .cards__icon--five {
     grid-row: 5/6;
-    grid-column: 5/6;
+    grid-column: 4/7;
   }
   .cards__icon--six {
     grid-row: 6/7;
-    grid-column: 2/3;
+    grid-column: 1/4;
   }
   .cards__box {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 3em;
-  }
-  .cards__card-img {
-    display: none;
   }
   .cards__card--one {
     grid-row: 1/2;

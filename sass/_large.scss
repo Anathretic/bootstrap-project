@@ -87,39 +87,41 @@
 
 	.cards {
 		&__icon {
+			position: relative;
 			display: grid;
+			background-image: url('../img/background-icons.jpg');
 			padding: 2em;
-			width: 250px;
-			height: 250px;
+			border-radius: 8px;
+			z-index: 5;
 
 			&--one {
 				grid-row: 1/2;
-				grid-column: 5/6;
+				grid-column: 4/7;
 			}
 
 			&--two {
 				grid-row: 2/3;
-				grid-column: 2/3;
+				grid-column: 1/4;
 			}
 
 			&--three {
 				grid-row: 3/4;
-				grid-column: 5/6;
+				grid-column: 4/7;
 			}
 
 			&--four {
 				grid-row: 4/5;
-				grid-column: 2/3;
+				grid-column: 1/4;
 			}
 
 			&--five {
 				grid-row: 5/6;
-				grid-column: 5/6;
+				grid-column: 4/7;
 			}
 
 			&--six {
 				grid-row: 6/7;
-				grid-column: 2/3;
+				grid-column: 1/4;
 			}
 		}
 
@@ -130,10 +132,6 @@
 		}
 
 		&__card {
-			&-img {
-				display: none;
-			}
-
 			&--one {
 				grid-row: 1/2;
 				grid-column: 1/4;
