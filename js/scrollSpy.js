@@ -1,5 +1,5 @@
 const menuItems = document.querySelectorAll('.nav__link')
-const scrollSpySections = document.querySelectorAll('.section')
+const scrollSpySections = document.querySelectorAll('.spy')
 
 const handleScrollSpy = () => {
 	if (document.body.classList.contains('main-page')) {

@@ -5,6 +5,9 @@ let NAV_LIST_BTN
 let ALL_NAV_ITEMS
 let NAV_ICON
 let DELAY_TIME
+let COUNTER_ITEMS
+let COUNTER_BOX
+let FOOTER_YEAR
 
 const main = () => {
 	prepareDOMElements()
@@ -18,6 +21,9 @@ const prepareDOMElements = () => {
 	NAV_LIST_BTN = document.querySelector('.burger-btn')
 	ALL_NAV_ITEMS = document.querySelectorAll('.nav__item')
 	NAV_ICON = document.querySelector('.nav__icon')
+	COUNTER_ITEMS = document.querySelectorAll('.achievement-number')
+	COUNTER_BOX = document.querySelector('.achievement-box')
+	FOOTER_YEAR = document.querySelector('.footer__year')
 	DELAY_TIME = 1
 }
 
@@ -28,6 +34,8 @@ const prepareDOMEvents = () => {
 		mobileBlock()
 	})
 	NAV_LIST_BTN.addEventListener('click', handleNav)
+	currentYear()
+	observer.observe(COUNTER_BOX)
 }
 
 const handleNav = () => {
@@ -61,5 +69,38 @@ const addShadow = () => {
 		NAV.classList.remove('nav-shadow')
 	}
 }
+
+const currentYear = () => {
+	const newDate = new Date().getFullYear()
+	FOOTER_YEAR.textContent = newDate
+}
+
+const options = {
+	rootMargin: '-50px',
+}
+
+const startCounter = entry => {
+	if (entry[0].isIntersecting) {
+		COUNTER_ITEMS.forEach(counter => {
+			const updateCounter = () => {
+				const finalNumber = counter.getAttribute('data-number')
+				const value = parseInt(counter.textContent)
+
+				const speed = finalNumber / 200
+
+				if (value < finalNumber) {
+					counter.textContent = `${Math.floor(value + speed)}`
+					setTimeout(updateCounter, 1)
+				} else {
+					counter.textContent = finalNumber
+				}
+			}
+
+			updateCounter()
+		})
+	}
+}
+
+const observer = new IntersectionObserver(startCounter, options)
 
 document.addEventListener('DOMContentLoaded', main)
