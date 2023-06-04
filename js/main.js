@@ -4,6 +4,7 @@ let NAV_LIST
 let NAV_LIST_BTN
 let ALL_NAV_ITEMS
 let NAV_ICON
+let ACCORDIONS
 let DELAY_TIME
 let COUNTER_ITEMS
 let COUNTER_BOX
@@ -21,6 +22,7 @@ const prepareDOMElements = () => {
 	NAV_LIST_BTN = document.querySelector('.burger-btn')
 	ALL_NAV_ITEMS = document.querySelectorAll('.nav__item')
 	NAV_ICON = document.querySelector('.nav__icon')
+	ACCORDIONS = document.querySelectorAll('.accordion__box')
 	COUNTER_ITEMS = document.querySelectorAll('.achievement-number')
 	COUNTER_BOX = document.querySelector('.achievement-box')
 	FOOTER_YEAR = document.querySelector('.footer__year')
@@ -36,6 +38,7 @@ const prepareDOMEvents = () => {
 	NAV_LIST_BTN.addEventListener('click', handleNav)
 	currentYear()
 	observer.observe(COUNTER_BOX)
+	accordionSetup()
 }
 
 const handleNav = () => {
@@ -102,5 +105,19 @@ const startCounter = entry => {
 }
 
 const observer = new IntersectionObserver(startCounter, options)
+
+const accordionSetup = () => {
+	for (let i = 0; i < ACCORDIONS.length; i++) {
+		ACCORDIONS[i].onclick = function () {
+			this.classList.toggle('is-open')
+			const content = this.nextElementSibling
+			if (content.style.maxHeight) {
+				content.style.maxHeight = null
+			} else {
+				content.style.maxHeight = content.scrollHeight + 'px'
+			}
+		}
+	}
+}
 
 document.addEventListener('DOMContentLoaded', main)
