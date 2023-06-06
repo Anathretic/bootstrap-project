@@ -19,6 +19,72 @@
 </head>
 
 <body class="main-page">
+    <div class="popup">
+        <div class="popup__message">
+            <div class="popup__message-container">
+                <div class="popup__message-text">To tylko projekt strony!</div>
+                <a class="popup__message-btn btn-special-animation" href="/">ok</a>
+            </div>
+        </div>
+        <div class="popup__form">
+            <form class="popup__wrapper">
+                <div class="popup__title">formularz rezerwacji</div>
+                <div class="popup__box">
+                    <label for="popup-name" class="popup__box-label">Imię:</label>
+                    <input type="text" class="popup__box-input" id="popup-name" placeholder="Wprowadź swoje imię..">
+                    <p class="popup__box-error"></p>
+                </div>
+                <div class="popup__box">
+                    <label for="popup-last-name" class="popup__box-label">Nazwisko:</label>
+                    <input type="text" class="popup__box-input" id="popup-last-name"
+                        placeholder="Wprowadź swoje nazwisko..">
+                    <p class="popup__box-error"></p>
+                </div>
+                <div class="popup__box">
+                    <label for="popup-phone-number" class="popup__box-label">Nr telefonu:</label>
+                    <input type="text" class="popup__box-input" id="popup-phone-number"
+                        placeholder="Podaj swój numer telefonu..">
+                    <p class="popup__box-error"></p>
+                </div>
+                <div class="popup__box">
+                    <label for="popup-email" class="popup__box-label">E-mail:</label>
+                    <input type="text" class="popup__box-input" id="popup-email" placeholder="Wprowadź swój adres e-mail..">
+                    <p class="popup__box-error"></p>
+                </div>
+                <div class="popup__box">
+                    <label for="popup-treatment" class="popup__box-label">Wybierz zabieg:</label>
+                    <select id="popup-treatment" class="popup__box-select">
+                        <option value="0" disabled selected>- wybierz zabieg -</option>
+                        <option value="1">Klasyczny masaż twarzy</option>
+                        <option value="2">Masaż limfatyczny twarzy</option>
+                        <option value="3">Masaż kobido</option>
+                        <option value="4">Ultracalming</option>
+                        <option value="5">Kawitacja</option>
+                        <option value="6">Radiofrekwencja mikroigłowa</option>
+                        <option value="7">Masaż gorącymi kamieniami</option>
+                        <option value="8">Masaż Shiatsu</option>
+                        <option value="9">Masaż relaksacyjny</option>
+                        <option value="10">Mezoterapia</option>
+                        <option value="11">Drenaż limfatyczny</option>
+                        <option value="12">Ultradźwięki</option>
+                    </select>
+                    <p class="popup__box-error"></p>
+                </div>
+                <div class="popup__box">
+                    <label for="popup-company" class="popup__box-label">Ilość osób:</label>
+                    <input type="number" max="5" onkeyup="limitAmount()" class="popup__box-input" id="popup-amount" placeholder="Podaj liczbę..">
+                    <p class="popup__box-error"></p>
+                </div>
+            </form>
+            <div class="popup__box-icon"><i class="fa-solid fa-xmark"></i></div>
+            <button type="button" class="popup__box-btn btn-special-animation">Wyślij</button>
+        </div>
+    </div>
+
+    <div class="button-box">
+        <button class="button-box__item button-box__item--one"><i class="fa-solid fa-file-signature"></i></button>
+    </div>
+
     <nav class="nav">
         <div class="nav__wrapper">
             <a class="nav__icon" href="#"><img src="dist/img/icons/spa-logo.svg" alt=""></a>
@@ -204,7 +270,7 @@
                                 </div>
                                 <h3>Anna Smith</h3>
                                 <br>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <p>Byłam w SPA na masażu pleców, polecam wszystkim, którzy chcą zredukować ból oraz napięcie psychiczne i fizyczne. Pełen profesjonalizm, dbanie o atmosferę i samopoczucie.
                                 </p>
                             </div>
                         </div>
@@ -214,7 +280,7 @@
                                 </div>
                                 <h3>Marta Kowalska</h3>
                                 <br>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <p>Intensywne i uwalniające od napięć doświadczenie, komfortowe warunki i przemiły personel. Po masażu poczułam się bardzo zrelaksowana i odprężona. Polecam gorąco!
                                 </p>
                             </div>
                         </div>
@@ -224,7 +290,7 @@
                                 </div>
                                 <h3>Jan Nowak</h3>
                                 <br>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                <p>Komfortowe warunki, wykwalifikowany i przemiły personel. Zabiegi zawsze idealnie dobrane do potrzeb. Korzystam od kilku  lat, zawsze jestem bardzo zadowolony. Polecam!
                                 </p>
                             </div>
                         </div>
@@ -321,6 +387,7 @@
         crossorigin="anonymous"></script>
     <script src="dist/js/main.min.js"></script>
     <script src="dist/js/scrollSpy.min.js"></script>
+    <script src="dist/js/formScript.min.js"></script>
 </body>
 
 </html>

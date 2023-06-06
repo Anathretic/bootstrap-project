@@ -1,4 +1,20 @@
 @media (min-width: 768px) {
+	.popup {
+		&__box {
+			&-icon {
+				right: 2rem;
+				padding: 1em;
+			}
+		}
+
+		&__message {
+			&-container {
+				width: 500px;
+				height: 200px;
+			}
+		}
+	}
+	
 	.header {
 		&__heading {
 			font-size: 6rem;
@@ -55,6 +71,33 @@
 
 	.carousel-item {
 		padding: 3em;
+	}
+}
+
+@media (min-width: 768px) and (min-height: 768px) {
+	.button-box {
+		bottom: 80px;
+	
+		.button {
+			height: 80px;
+			width: 80px;
+	
+			&--one {
+				&::after {
+					width: 30px;
+					height: 80px;
+				}
+
+				&::before {
+					width: 30px;
+					height: 80px;
+				}
+			}
+	
+			i {
+				font-size: 20px;
+			}
+		}
 	}
 }
 

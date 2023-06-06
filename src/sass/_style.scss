@@ -18,7 +18,6 @@ html {
 
 body {
 	background-image: url('../img/body-bg.jpg');
-	background-size: cover;
 	background-attachment: fixed;
 	color: colors.$white-color;
 	font-family: 'Montserrat', sans-serif;
@@ -32,6 +31,10 @@ body {
 
 .scroll-block {
 	overflow: hidden;
+}
+
+.scroll-block-padding {
+	padding-right: var(--padding-space);
 }
 
 .wrapper {
@@ -89,6 +92,230 @@ body {
 .bounce-top {
 	display: block;
 	animation: bounce-top 2s infinite both;
+}
+
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-image: colors.$background-gradient;
+	transform: translateX(100%);
+	opacity: 0;
+	transition: transform 0.7s, opacity 0.2s;
+	overscroll-behavior-y: contain;
+	overflow-y: auto;
+	z-index: 998;
+
+	&--active {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	&__title {
+		margin-top: 1em;
+		padding: 1em 0.2em;
+		color: colors.$white-color;
+		font-size: 2em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&__wrapper {
+		width: 90%;
+		max-width: 900px;
+	}
+
+	&__form {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 1em;
+	}
+
+	&__box {
+		&-label {
+			color: colors.$white-color;
+			text-transform: uppercase;
+		}
+
+		&-input,
+		&-select,
+		&-btn {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 1.6rem;
+		}
+
+		&-input,
+		&-select {
+			margin: 0.5em 0;
+			padding: 0.7em 1.2em;
+			width: 100%;
+			background-color: #fff;
+			border: none;
+			border-radius: 8px;
+		}
+
+		&-error {
+			margin-bottom: 2em;
+			color: colors.$error-color;
+			font-size: 0.9em;
+			visibility: hidden;
+		}
+
+		&-btn {
+			margin: 2em;
+			padding: 1em;
+			width: 70%;
+			color: colors.$white-color;
+			background-color: colors.$special-color;
+			border: none;
+			border-radius: 8px;
+			text-transform: uppercase;
+			cursor: pointer;
+
+			&::before {
+				background-color: colors.$darker-special-color;
+			}
+		}
+
+		&-icon {
+			position: absolute;
+			top: 8px;
+			right: 1rem;
+			padding: 0.5em;
+			font-size: 2em;
+			color: colors.$white-color;
+			cursor: pointer;
+		}
+	}
+
+	&__message {
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: rgba(46, 46, 46, 0.2);
+		overflow: hidden;
+		z-index: 999;
+
+		&-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 300px;
+			height: 150px;
+			background-color: colors.$white-color;
+			border-radius: 8px;
+			border: 2px solid colors.$black-color;
+			animation: show-it 0.3s 1;
+			z-index: 1000;
+		}
+
+		&-text {
+			margin: 1em;
+			color: colors.$black-color;
+			font-size: 1.6rem;
+			text-align: center;
+		}
+
+		&-btn {
+			margin: 1em;
+			padding: 0.8em;
+			width: 40%;
+			color: colors.$white-color;
+			background-color: colors.$special-color;
+			border: none;
+			border-radius: 8px;
+			font-size: 1.5rem;
+			text-align: center;
+			text-decoration: none;
+			text-transform: uppercase;
+			cursor: pointer;
+
+			&::before {
+				background-color: colors.$darker-special-color;
+			}
+		}
+	}
+}
+
+.warning {
+	.popup__box-error {
+		visibility: visible;
+	}
+
+	.popup__box-input,
+	.popup__box-select {
+		border: 2px solid colors.$error-color;
+	}
+}
+
+.button-box {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	left: 0;
+	bottom: 40px;
+	z-index: 989;
+
+	&__item {
+		display: block;
+		position: relative;
+		height: 60px;
+		width: 60px;
+		color: #fff;
+		background: black;
+		text-align: center;
+		text-decoration: none;
+		border: none;
+		transform: rotate(90deg);
+		transition: transform 0.7s;
+		z-index: 10;
+
+		&--active {
+			transform: translateX(-100%) rotate(90deg);
+		}
+
+		&--one {
+			background: colors.$main-color;
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: -15px;
+				bottom: 0px;
+				width: 30px;
+				height: 60px;
+				background: colors.$main-color;
+				transform: skew(-20deg);
+				z-index: -1;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				right: -15px;
+				bottom: 0px;
+				width: 30px;
+				height: 60px;
+				background: colors.$main-color;
+				transform: skew(20deg);
+				z-index: -1;
+			}
+		}
+
+		i {
+			font-size: 16px;
+			transform: rotate(270deg);
+		}
+	}
 }
 
 .nav {
@@ -477,7 +704,7 @@ body {
 
 .achievements {
 	background-color: colors.$darker-special-color;
-	
+
 	.achievment-box {
 		padding: 1em;
 	}

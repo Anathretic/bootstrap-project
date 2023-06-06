@@ -28,6 +28,14 @@
 		background-image: colors.$shadow, url('../img/header-img-big.jpg');
 	}
 
+	.popup {
+		&__message {
+			&-container {
+				width: 600px;
+			}
+		}
+	}
+
 	.nav {
 		.burger-btn {
 			display: none;

@@ -1,5 +1,25 @@
 @use 'colors';
 
+@media (max-width: 300px) {
+	.popup {
+		&__message {
+			&-container {
+				width: 90%;
+				height: 200px;
+			}
+		}
+	}
+}
+
+@media (min-width: 368px) {
+	.popup {
+		&__title {
+			margin-top: 0;
+			padding: 2em;
+		}
+	}
+}
+
 @media (max-width: 280px) {
 	.cards{
 		&__card {
@@ -32,6 +52,29 @@
 }
 
 @media (min-width: 576px) {
+    .popup {
+		&__box {
+			&-btn {
+				width: 300px;
+			}
+		}
+
+		&__message {
+			&-container {
+				width: 450px;
+				height: 200px;
+			}
+
+			&-text {
+				font-size: 2rem;
+			}
+
+			&-btn {
+				font-size: 1.6rem;
+			}
+		}
+	}
+    
     .header {
         &__heading {
             font-size: 5rem;
