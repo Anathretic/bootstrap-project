@@ -14,7 +14,7 @@
 			}
 		}
 	}
-	
+
 	.header {
 		&__heading {
 			font-size: 6rem;
@@ -69,6 +69,21 @@
 		}
 	}
 
+	.accordion {
+		&__box {
+			&-text {
+				display: grid;
+				align-items: center;
+				grid-template-columns: repeat(3, 1fr);
+				padding: 0.5em;
+			}
+
+			&-item {
+				margin: 0 1em;
+			}
+		}
+	}
+
 	.carousel-item {
 		padding: 3em;
 	}
@@ -77,11 +92,11 @@
 @media (min-width: 768px) and (min-height: 768px) {
 	.button-box {
 		bottom: 80px;
-	
+
 		&__item {
 			height: 80px;
 			width: 80px;
-	
+
 			&--one {
 				&::after {
 					width: 30px;
@@ -93,7 +108,7 @@
 					height: 80px;
 				}
 			}
-	
+
 			i {
 				font-size: 20px;
 			}
