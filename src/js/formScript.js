@@ -12,6 +12,7 @@ let SELECT_TREATMENT
 let INPUT_AMOUNT
 let POPUP_ICON
 let POPUP_FORM_BTN
+let POPUP_MESSAGE_BTN
 let INPUTS_ARRAY
 
 const popupMain = () => {
@@ -34,6 +35,7 @@ const popupPrepareDOMElements = () => {
 	INPUT_AMOUNT = document.querySelector('#popup-amount')
 	POPUP_ICON = document.querySelector('.popup__box-icon')
 	POPUP_FORM_BTN = document.querySelector('.popup__box-btn')
+	POPUP_MESSAGE_BTN = document.querySelector('.popup__message-btn')
 	INPUTS_ARRAY = [INPUT_NAME, INPUT_LAST_NAME, INPUT_PHONE_NUMBER, INPUT_EMAIL, INPUT_AMOUNT]
 }
 
@@ -52,6 +54,7 @@ const popupPrepareDOMEvents = () => {
 		checkAmount(INPUT_AMOUNT)
 		checkErrors()
 	})
+	POPUP_MESSAGE_BTN.addEventListener('click', refreshPopup)
 }
 
 const showPopup = () => {
@@ -68,6 +71,14 @@ const closePopup = () => {
 		BODY.classList.remove('scroll-block-padding')
 		NAV.classList.remove('scroll-block-padding')
 	}, 100)
+}
+
+const refreshPopup = () => {
+	POPUP_MESSAGE.style.display = 'none'
+	closePopup()
+	setTimeout(() => {
+		POPUP_FORM.style.display = 'flex'
+	}, 300)
 }
 
 const showError = (input, msg) => {
@@ -140,9 +151,9 @@ const checkAmount = input => {
 }
 
 const limitAmount = () => {
-    if(INPUT_AMOUNT.value > 5) {
-        INPUT_AMOUNT.value = '5'
-    }
+	if (INPUT_AMOUNT.value > 5) {
+		INPUT_AMOUNT.value = '5'
+	}
 }
 
 const checkSelect = select => {
