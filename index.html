@@ -75,6 +75,11 @@
                     <input type="number" max="5" onkeyup="limitAmount()" class="popup__box-input" id="popup-amount" placeholder="Podaj liczbę..">
                     <p class="popup__box-error"></p>
                 </div>
+                <div class="popup__box">
+                    <label for="popup-date" class="popup__box-label">Data:</label>
+                    <input type="date" class="popup__box-input" id="popup-date" min="2023-06-01" max="2023-12-31"/>
+                    <p class="popup__box-error"></p>
+                </div>
             </form>
             <div class="popup__box-icon"><i class="fa-solid fa-xmark"></i></div>
             <button type="button" class="popup__box-btn btn-special-animation">Wyślij</button>

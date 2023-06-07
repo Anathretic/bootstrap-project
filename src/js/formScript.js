@@ -10,6 +10,7 @@ let INPUT_PHONE_NUMBER
 let INPUT_EMAIL
 let SELECT_TREATMENT
 let INPUT_AMOUNT
+let INPUT_DATE
 let POPUP_ICON
 let POPUP_FORM_BTN
 let POPUP_MESSAGE_BTN
@@ -33,6 +34,7 @@ const popupPrepareDOMElements = () => {
 	INPUT_EMAIL = document.querySelector('#popup-email')
 	SELECT_TREATMENT = document.querySelector('#popup-treatment')
 	INPUT_AMOUNT = document.querySelector('#popup-amount')
+	INPUT_DATE = document.querySelector('#popup-date')
 	POPUP_ICON = document.querySelector('.popup__box-icon')
 	POPUP_FORM_BTN = document.querySelector('.popup__box-btn')
 	POPUP_MESSAGE_BTN = document.querySelector('.popup__message-btn')
@@ -52,6 +54,7 @@ const popupPrepareDOMEvents = () => {
 		checkMail(INPUT_EMAIL)
 		checkSelect(SELECT_TREATMENT)
 		checkAmount(INPUT_AMOUNT)
+		checkDate(INPUT_DATE)
 		checkErrors()
 	})
 	POPUP_MESSAGE_BTN.addEventListener('click', refreshPopup)
@@ -161,6 +164,16 @@ const checkSelect = select => {
 		clearError(select)
 	} else {
 		showError(select, 'Wybierz zabieg..')
+	}
+}
+
+const checkDate = date => {
+	const re = /^\d{4}-\d{2}-\d{2}$/
+
+	if (re.test(date.value)) {
+		clearError(date)
+	} else {
+		showError(date, 'Wprowadź prawidłową datę..')
 	}
 }
 
