@@ -1,5 +1,5 @@
 # bootstrap-project
 
-Website project to test some bootstrap capabilities as well as JavaScript and CSS, like scroll-spy for example.
+An example website with bootstrap elements and accordion.
 
-Folder 'dist' was added due to the use of github-pages.
+Used: HTML5, CSS3 (Flexbox, Grid), SASS, JavaScript (Intersection Observer), Gulp (with modules like babel), BEM Methodology, RWD.
