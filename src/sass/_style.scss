@@ -600,6 +600,7 @@ body {
 		border-top: 1px solid colors.$main-color;
 		border-bottom: 1px solid colors.$main-color;
 		border-radius: 8px;
+		box-shadow: 1px 5px 20px colors.$dark-color;
 	}
 
 	&__img {
@@ -640,7 +641,7 @@ body {
 		text-align: left;
 		outline: none;
 		cursor: pointer;
-		transition: background-color 0.3s linear;
+		transition: background-color 0.3s, box-shadow 0.3s;
 
 		&-content {
 			padding: 0 20px;
@@ -691,6 +692,7 @@ body {
 	&__box:hover,
 	&__box.is-open {
 		background-color: colors.$darker-special-color;
+		box-shadow: 1px 5px 20px colors.$dark-color;
 	}
 }
 
@@ -704,6 +706,7 @@ body {
 		padding: 3em;
 		background-color: colors.$dark-color;
 		border-radius: 8px;
+		box-shadow: 1px 5px 20px colors.$dark-color;
 		text-align: center;
 
 		&-img {

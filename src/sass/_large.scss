@@ -4,16 +4,19 @@
 @media (min-width: 992px) {
 	.aboutus-hero {
 		&__item:first-of-type {
-			margin-top: 0;
+			transform: none;
 			margin-left: -30px;
 		}
 
 		&__item {
 			margin-top: 30px;
+			background-color: colors.$dark-color;
+			border: none;
+			transform: scale(1.1);
 		}
-		
+
 		&__item:last-of-type {
-			margin-top: 0;
+			transform: none;
 			margin-right: -30px;
 		}
 	}
@@ -123,7 +126,7 @@
 			&--five::before {
 				left: 20px;
 			}
-			
+
 			&--one:hover::before,
 			&--three:hover::before,
 			&--five:hover::before {
@@ -143,7 +146,7 @@
 				right: 0px;
 				animation: none;
 			}
-			
+
 			&--one {
 				grid-row: 1/2;
 				grid-column: 1/4;
