@@ -1,5 +1,13 @@
 @use 'colors';
 
+@media (max-width: 280px) {
+	.cards{
+		&__card {
+			width: 85%;
+		}
+	}
+}
+
 @media (max-width: 300px) {
 	.popup {
 		&__message {
@@ -7,6 +15,19 @@
 				width: 90%;
 				height: 200px;
 			}
+		}
+	}
+
+	.cards {
+		&__card {
+			height: 415px;
+			padding: 2em;
+		}
+	}
+
+	.carousel {
+		&__card {
+			height: 423px;
 		}
 	}
 }
@@ -18,12 +39,26 @@
 			padding: 2em;
 		}
 	}
+
+	.carousel {
+		&__card {
+			height: auto;
+		}
+	}
 }
 
-@media (max-width: 280px) {
-	.cards{
+@media (min-width: 410px) {
+	.carousel {
 		&__card {
-			width: 85%;
+			height: 290px;
+		}
+	}
+}
+
+@media (min-width: 440px) {
+	.carousel {
+		&__card {
+			height: 270px;
 		}
 	}
 }
@@ -88,4 +123,10 @@
             font-size: 1.6rem;
         }
     }
+
+	.carousel {
+		&__card {
+			height: auto;
+		}
+	}
 }

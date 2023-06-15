@@ -37,6 +37,8 @@
 		}
 
 		&__card {
+			height: 365px;
+			
 			&--one {
 				grid-row: 1/2;
 				grid-column: 1/4;

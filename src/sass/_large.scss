@@ -109,9 +109,24 @@
 			display: grid;
 			grid-template-columns: repeat(6, 1fr);
 			gap: 3em;
+			border-radius: 8px;
 		}
 
 		&__card {
+			height: 314px;
+			border: none;
+
+			&--one,
+			&--two,
+			&--three,
+			&--four,
+			&--five,
+			&--six {
+				&:hover {
+					border: none;
+				}
+			}
+
 			&--one::before,
 			&--two::before,
 			&--three::before,
