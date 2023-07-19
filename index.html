@@ -22,67 +22,162 @@
     <div class="popup">
         <div class="popup__message">
             <div class="popup__message-container">
-                <div class="popup__message-text">To tylko projekt strony!</div>
-                <div class="popup__message-btn btn-special-animation">ok</div>
+                <p class="popup__message-text">Wysłane! Zostaniesz przekierowany..</p>
+                <div class="popup__message-icon"><i class="fa-solid fa-circle-check" style="color: #2b8424;"></i></div>
             </div>
         </div>
-        <div class="popup__form">
-            <form class="popup__wrapper">
-                <div class="popup__title">formularz rezerwacji</div>
-                <div class="popup__box">
-                    <label for="popup-name" class="popup__box-label">Imię:</label>
-                    <input type="text" class="popup__box-input" id="popup-name" placeholder="Wprowadź swoje imię..">
-                    <p class="popup__box-error"></p>
+
+        <div class="popup__title">formularz</div>
+        <div class="popup__icon"><i class="fa-solid fa-xmark"></i></div>
+
+        <div class="popup__header">
+            <ul>
+                <li class="popup__header-progressbar popup__header-progressbar--first popup-progressbar-active">
+                    <p class="popup__header-text">1</p>
+                </li>
+                <li class="popup__header-progressbar popup__header-progressbar--second">
+                    <p class="popup__header-text">2</p>
+                </li>
+                <li class="popup__header-progressbar popup__header-progressbar--third">
+                    <p class="popup__header-text">3</p>
+                </li>
+                <li class="popup__header-progressbar popup__header-progressbar--fourth">
+                    <p class="popup__header-text">4</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="popup__container">
+            <div class="popup__form popup__form--first">
+                <h4>Dane osobowe</h4>
+                <form class="popup__wrapper">
+                    <div class="popup__box">
+                        <label for="popup-name" class="popup__box-label">Imię:</label>
+                        <input type="text" class="popup__box-input" id="popup-name" placeholder="Wprowadź swoje imię..">
+                        <p class="popup__box-error"></p>
+                    </div>
+                    <div class="popup__box">
+                        <label for="popup-last-name" class="popup__box-label">Nazwisko:</label>
+                        <input type="text" class="popup__box-input" id="popup-last-name"
+                            placeholder="Wprowadź swoje nazwisko..">
+                        <p class="popup__box-error"></p>
+                    </div>
+                </form>
+                <div class="popup__buttons">
+                    <div class="popup__wrapper">
+                        <div class="popup__buttons-box popup__buttons-box--first">
+                            <button type="button"
+                                class="popup__buttons-btn popup__buttons-btn--first-next btn-special-animation">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="popup__box">
-                    <label for="popup-last-name" class="popup__box-label">Nazwisko:</label>
-                    <input type="text" class="popup__box-input" id="popup-last-name"
-                        placeholder="Wprowadź swoje nazwisko..">
-                    <p class="popup__box-error"></p>
+            </div>
+            <div class="popup__form popup__form--second">
+                <h4>Dane kontaktowe</h4>
+                <form class="popup__wrapper">
+                    <div class="popup__box">
+                        <label for="popup-phone-number" class="popup__box-label">Nr telefonu:</label>
+                        <input type="text" class="popup__box-input" id="popup-phone-number"
+                            placeholder="Podaj swój numer telefonu..">
+                        <p class="popup__box-error"></p>
+                    </div>
+                    <div class="popup__box">
+                        <label for="popup-email" class="popup__box-label">E-mail:</label>
+                        <input type="text" class="popup__box-input" id="popup-email"
+                            placeholder="Wprowadź swój adres e-mail..">
+                        <p class="popup__box-error"></p>
+                    </div>
+                </form>
+                <div class="popup__buttons">
+                    <div class="popup__wrapper">
+                        <div class="popup__buttons-box popup__buttons-box--second">
+                            <button type="button"
+                                class="popup__buttons-btn popup__buttons-btn--second-back btn-special-animation">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button type="button"
+                                class="popup__buttons-btn popup__buttons-btn--second-next btn-special-animation">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="popup__box">
-                    <label for="popup-phone-number" class="popup__box-label">Nr telefonu:</label>
-                    <input type="text" class="popup__box-input" id="popup-phone-number"
-                        placeholder="Podaj swój numer telefonu..">
-                    <p class="popup__box-error"></p>
+            </div>
+            <div class="popup__form popup__form--third">
+                <h4>Wybór zabiegu</h4>
+                <form class="popup__wrapper">
+                    <div class="popup__box">
+                        <label for="popup-treatment" class="popup__box-label">Wybierz zabieg:</label>
+                        <select id="popup-treatment" class="popup__box-select">
+                            <option value="0" disabled selected>- wybierz zabieg -</option>
+                            <option value="1">Klasyczny masaż twarzy</option>
+                            <option value="2">Masaż limfatyczny twarzy</option>
+                            <option value="3">Masaż kobido</option>
+                            <option value="4">Ultracalming</option>
+                            <option value="5">Kawitacja</option>
+                            <option value="6">Radiofrekwencja mikroigłowa</option>
+                            <option value="7">Masaż gorącymi kamieniami</option>
+                            <option value="8">Masaż Shiatsu</option>
+                            <option value="9">Masaż relaksacyjny</option>
+                            <option value="10">Mezoterapia</option>
+                            <option value="11">Drenaż limfatyczny</option>
+                            <option value="12">Ultradźwięki</option>
+                        </select>
+                        <p class="popup__box-error"></p>
+                    </div>
+                    <div class="popup__box">
+                        <label for="popup-amount" class="popup__box-label">Ilość osób:</label>
+                        <input type="number" min="1" max="20" onkeyup="limitAmount()" class="popup__box-input"
+                            id="popup-amount" placeholder="Podaj liczbę..">
+                        <p class="popup__box-error"></p>
+                    </div>
+                </form>
+                <div class="popup__buttons">
+                    <div class="popup__wrapper">
+                        <div class="popup__buttons-box popup__buttons-box--third">
+                            <button type="button"
+                                class="popup__buttons-btn popup__buttons-btn--third-back btn-special-animation">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button type="button"
+                                class="popup__buttons-btn popup__buttons-btn--third-next btn-special-animation">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="popup__box">
-                    <label for="popup-email" class="popup__box-label">E-mail:</label>
-                    <input type="text" class="popup__box-input" id="popup-email" placeholder="Wprowadź swój adres e-mail..">
-                    <p class="popup__box-error"></p>
+            </div>
+            <div class="popup__form popup__form--fourth">
+                <h4>Wybór terminu</h4>
+                <form class="popup__wrapper">
+                    <div class="popup__box">
+                        <label for="popup-date" class="popup__box-label">Data:</label>
+                        <input type="date" class="popup__box-input" id="popup-date" min="2023-06-01" max="2023-12-31" />
+                        <p class="popup__box-error"></p>
+                    </div>
+                    <div class="popup__box">
+                        <label for="popup-amount" class="popup__box-label">Godzina:</label>
+                        <input type="time" class="popup__box-input" id="popup-time" min="10:00" max="18:00" />
+                        <p class="popup__box-error"></p>
+                    </div>
+                </form>
+                <div class="popup__buttons">
+                    <div class="popup__wrapper">
+                        <div class="popup__buttons-box popup__buttons-box--fourth">
+                            <button type="button"
+                                class="popup__buttons-btn popup__buttons-btn--fourth-back btn-special-animation">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button type="button"
+                                class="popup__buttons-btn popup__buttons-btn--fourth-send btn-special-animation">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="popup__box">
-                    <label for="popup-treatment" class="popup__box-label">Wybierz zabieg:</label>
-                    <select id="popup-treatment" class="popup__box-select">
-                        <option value="0" disabled selected>- wybierz zabieg -</option>
-                        <option value="1">Klasyczny masaż twarzy</option>
-                        <option value="2">Masaż limfatyczny twarzy</option>
-                        <option value="3">Masaż kobido</option>
-                        <option value="4">Ultracalming</option>
-                        <option value="5">Kawitacja</option>
-                        <option value="6">Radiofrekwencja mikroigłowa</option>
-                        <option value="7">Masaż gorącymi kamieniami</option>
-                        <option value="8">Masaż Shiatsu</option>
-                        <option value="9">Masaż relaksacyjny</option>
-                        <option value="10">Mezoterapia</option>
-                        <option value="11">Drenaż limfatyczny</option>
-                        <option value="12">Ultradźwięki</option>
-                    </select>
-                    <p class="popup__box-error"></p>
-                </div>
-                <div class="popup__box">
-                    <label for="popup-company" class="popup__box-label">Ilość osób:</label>
-                    <input type="number" max="5" onkeyup="limitAmount()" class="popup__box-input" id="popup-amount" placeholder="Podaj liczbę..">
-                    <p class="popup__box-error"></p>
-                </div>
-                <div class="popup__box">
-                    <label for="popup-date" class="popup__box-label">Data:</label>
-                    <input type="date" class="popup__box-input" id="popup-date" min="2023-06-01" max="2023-12-31"/>
-                    <p class="popup__box-error"></p>
-                </div>
-            </form>
-            <div class="popup__box-icon"><i class="fa-solid fa-xmark"></i></div>
-            <button type="button" class="popup__box-btn btn-special-animation">Wyślij</button>
+            </div>
         </div>
     </div>
 
@@ -92,7 +187,7 @@
 
     <nav class="nav">
         <div class="nav__wrapper">
-            <a class="nav__icon" href="#"><img src="dist/img/icons/spa-logo.svg" alt=""></a>
+            <button class="nav__icon"><img src="dist/img/icons/spa-logo.svg" alt=""></button>
             <button class="burger-btn">
                 <div class="burger-btn__box">
                     <div class="burger-btn__bars"></div>
@@ -138,7 +233,8 @@
                         <div class="cards__card-img"><img src="dist/img/icons/aboutus-third-icon.svg" alt=""></div>
                         <h3>nastrojowe światło</h3>
                         <br>
-                        <p>Dbamy o odpowiedni nastrój za pomocą świec, które tworzą idealne warunki, aby się wyciszyć.</p>
+                        <p>Dbamy o odpowiedni nastrój za pomocą świec, które tworzą idealne warunki, aby się wyciszyć.
+                        </p>
                     </div>
                     <div class="cards__card cards__card--four">
                         <div class="cards__card-img"><img src="dist/img/icons/aboutus-fourth-icon.svg" alt=""></div>
@@ -168,8 +264,7 @@
                 <div class="underline"></div>
                 <div class="row offer">
                     <div class="col-lg-4 text-center offer__item">
-                        <img src="dist/img/aboutus-fitness.jpg" alt="Mężczyzna ćwiczący ze sztangą"
-                            class="offer__img">
+                        <img src="dist/img/aboutus-fitness.jpg" alt="Mężczyzna ćwiczący ze sztangą" class="offer__img">
                         <p class="offer__title">Sala fitness</p>
                         <p class="offer__text">Sala fitness w naszym spa to idealne miejsce dla tych, którzy
                             chcą zadbać o swoje ciało i zdrowie. W takim miejscu znajdziesz szeroki wybór sprzętów,
@@ -204,8 +299,15 @@
             <div class="wrapper">
                 <h2 class="section-title">zabiegi</h2>
                 <div class="underline"></div>
+                <div class="section-special-text">
+                    <p>Zabieg rozpoczynamy o pełnej godzinie lub w jej połowie!</p>
+                    <p class="special">Pamiętaj o tym przy rezerwacji!</p>
+                </div>
                 <div class="accordion">
-                    <button class="accordion__box accordion__box--one">Masaż twarzy</button>
+                    <div class="accordion__box-img accordion__box-img--one"></div>
+                    <div class="accordion__box accordion__box--one">
+                        <span class="accordion__box-span">Zabiegi na twarz</span>
+                    </div>
                     <div class="accordion__box-content">
                         <div class="accordion__box-text">
                             <div class="accordion__box-item accordion__box-item-name">
@@ -248,9 +350,7 @@
                                 <p>90 minut</p>
                             </div>
                         </div>
-                    </div>
-                    <button class="accordion__box accordion__box--two">Twarz - zabiegi</button>
-                    <div class="accordion__box-content">
+                        <hr>
                         <div class="accordion__box-text">
                             <div class="accordion__box-item accordion__box-item-name">
                                 <h4>Ultracalming</h4>
@@ -293,7 +393,10 @@
                             </div>
                         </div>
                     </div>
-                    <button class="accordion__box accordion__box--three">Masaż ciała</button>
+                    <div class="accordion__box-img accordion__box-img--two"></div>
+                    <div class="accordion__box accordion__box--two">
+                        <span class="accordion__box-span">Zabiegi na ciało</span>
+                    </div>
                     <div class="accordion__box-content">
                         <div class="accordion__box-text">
                             <div class="accordion__box-item accordion__box-item-name">
@@ -336,9 +439,7 @@
                                 <p>90 minut</p>
                             </div>
                         </div>
-                    </div>
-                    <button class="accordion__box accordion__box--three">Ciało - zabiegi</button>
-                    <div class="accordion__box-content">
+                        <hr>
                         <div class="accordion__box-text">
                             <div class="accordion__box-item accordion__box-item-name">
                                 <h4>Mezoterapia</h4>
@@ -392,21 +493,27 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="carousel__card">
-                                <div class="carousel__card-img"><img src="dist/img/woman2-opinions.jpg" alt="Anna Smith">
+                                <div class="carousel__card-img"><img src="dist/img/woman2-opinions.jpg"
+                                        alt="Anna Smith">
                                 </div>
                                 <h3>Anna Smith</h3>
                                 <br>
-                                <p>Byłam w SPA na masażu pleców, polecam wszystkim, którzy chcą zredukować ból oraz napięcie psychiczne i fizyczne. Pełen profesjonalizm i dbanie o atmosferę i samopoczucie. Polecam!
+                                <p>Byłam w SPA na masażu pleców, polecam wszystkim, którzy chcą zredukować ból oraz
+                                    napięcie psychiczne i fizyczne. Pełen profesjonalizm i dbanie o atmosferę i
+                                    samopoczucie. Polecam!
                                 </p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="carousel__card">
-                                <div class="carousel__card-img"><img src="dist/img/woman1-opinions.jpg" alt="Marta Kowalska">
+                                <div class="carousel__card-img"><img src="dist/img/woman1-opinions.jpg"
+                                        alt="Marta Kowalska">
                                 </div>
                                 <h3>Marta Kowalska</h3>
                                 <br>
-                                <p>Intensywne i uwalniające od napięć doświadczenie, komfortowe warunki i przemiły personel. Po masażu poczułam się bardzo zrelaksowana i odprężona. Polecam gorąco! Cudowne miejsce.
+                                <p>Intensywne i uwalniające od napięć doświadczenie, komfortowe warunki i przemiły
+                                    personel. Po masażu poczułam się bardzo zrelaksowana i odprężona. Polecam gorąco!
+                                    Cudowne miejsce.
                                 </p>
                             </div>
                         </div>
@@ -416,7 +523,9 @@
                                 </div>
                                 <h3>Jan Nowak</h3>
                                 <br>
-                                <p>Komfortowe warunki, wykwalifikowany i przemiły personel. Zabiegi zawsze idealnie dobrane do potrzeb. Korzystam od kilku  lat, zawsze jestem bardzo zadowolony. Polecam z całego serca!
+                                <p>Komfortowe warunki, wykwalifikowany i przemiły personel. Zabiegi zawsze idealnie
+                                    dobrane do potrzeb. Korzystam od kilku lat, zawsze jestem bardzo zadowolony. Polecam
+                                    z całego serca!
                                 </p>
                             </div>
                         </div>
@@ -499,6 +608,7 @@
 
     <footer class="footer text-light text-center">
         <div class="footer__box">
+            <a href="/" class="footer__box-link"><i class="fa-solid fa-house footer-icon"></i></a>
             <a href="https://github.com/Anathretic" target="_blank" class="footer__box-link"><i
                     class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/konrad-wojtylo" target="_blank" class="footer__box-link"><i

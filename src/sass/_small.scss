@@ -1,7 +1,7 @@
 @use 'colors';
 
 @media (max-width: 280px) {
-	.cards{
+	.cards {
 		&__card {
 			width: 85%;
 		}
@@ -14,6 +14,12 @@
 			&-container {
 				width: 90%;
 				height: 200px;
+			}
+		}
+
+		&__box {
+			&-error {
+				display: none;
 			}
 		}
 	}
@@ -35,7 +41,7 @@
 @media (min-width: 368px) {
 	.popup {
 		&__title {
-			margin-top: 0;
+			margin-top: 1em;
 			padding: 2em;
 		}
 	}
@@ -43,6 +49,28 @@
 	.carousel {
 		&__card {
 			height: auto;
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.popup {
+		&__header {
+			&-progressbar {
+				padding: 0.5em;
+			}
+
+			&-text {
+				&::before {
+					display: none;
+				}
+			}
+		}
+
+		&__box {
+			&-error {
+				bottom: 10px;
+			}
 		}
 	}
 }
@@ -64,65 +92,54 @@
 }
 
 @media (min-height: 576px) {
-    .header {
-        &__chevron {
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            color: colors.$white-color;
-            font-size: 30px;
+	.header {
+		&__chevron {
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			color: colors.$white-color;
+			font-size: 30px;
 
-            a {
+			a {
 				color: colors.$white-color;
 				text-decoration: none;
 			}
 
-            .fa-sharp {
-                padding: 1em;
-            }
-        }
-    }
+			.fa-sharp {
+				padding: 1em;
+			}
+		}
+	}
 }
 
 @media (min-width: 576px) {
-    .popup {
-		&__box {
-			&-btn {
-				width: 300px;
-			}
-		}
-
+	.popup {
 		&__message {
 			&-container {
 				width: 450px;
-				height: 200px;
 			}
 
 			&-text {
 				font-size: 2rem;
 			}
-
-			&-btn {
-				font-size: 1.6rem;
-			}
 		}
 	}
-    
-    .header {
-        &__heading {
-            font-size: 5rem;
-        }
-    
-        &__text {
-            font-size: 1.8rem;
-        }
-    
-        &__btn {
-            font-size: 1.6rem;
-        }
-    }
+
+	.header {
+		&__heading {
+			font-size: 5rem;
+		}
+
+		&__text {
+			font-size: 1.8rem;
+		}
+
+		&__btn {
+			font-size: 1.6rem;
+		}
+	}
 
 	.carousel {
 		&__card {

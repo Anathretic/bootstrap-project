@@ -1,16 +1,15 @@
+@use 'colors';
+
 @media (min-width: 768px) {
 	.popup {
-		&__box {
-			&-icon {
-				right: 2rem;
-				padding: 1em;
-			}
+		&__icon {
+			right: 2rem;
+			padding: 1em;
 		}
 
 		&__message {
 			&-container {
 				width: 500px;
-				height: 200px;
 			}
 		}
 	}
@@ -38,7 +37,7 @@
 
 		&__card {
 			height: 365px;
-			
+
 			&--one {
 				grid-row: 1/2;
 				grid-column: 1/4;
@@ -73,6 +72,42 @@
 
 	.accordion {
 		&__box {
+			&-span,
+			&-img {
+				border-radius: 8px;
+			}
+
+			&-span {
+				width: 100%;
+				background-color: rgba(0, 0, 0, 0.6);
+				font-size: 1.2em;
+			}
+
+			&-img {
+				position: absolute;
+				display: block;
+				width: var(--special-width);
+				height: 250px;
+				border: 4mm ridge rgba(48, 113, 134, 0.7);
+				z-index: 1;
+
+				&--one {
+					background: url('/dist/img/accordion-one-img.jpg');
+					
+				}
+
+				&--two {
+					background: url('/dist/img/accordion-two-img.jpg');
+					
+				}
+
+				&--one,
+				&--two {
+					background-size: cover;
+					background-position: center;
+				}
+			}
+
 			&-text {
 				display: grid;
 				align-items: center;
@@ -83,6 +118,17 @@
 			&-item {
 				margin: 0 1em;
 			}
+		}
+
+		&__box::after,
+		&__box.is-open::after {
+			display: none;
+		}
+
+		&__box:hover,
+		&__box.is-open {
+			background-color: none;
+			box-shadow: 1px 0 20px colors.$special-color;
 		}
 	}
 

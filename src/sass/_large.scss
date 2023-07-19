@@ -32,6 +32,12 @@
 	}
 
 	.popup {
+		&__buttons {
+			&-btn {
+				width: 90px;
+			}
+		}
+
 		&__message {
 			&-container {
 				width: 600px;
@@ -46,6 +52,7 @@
 
 		&__icon {
 			top: 6px;
+			z-index: 10;
 		}
 
 		&__list {
