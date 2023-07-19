@@ -2,6 +2,7 @@ let BODY
 let NAV
 let NAV_LIST
 let NAV_LIST_BTN
+let NAV_LIST_BTN_BAR
 let ALL_NAV_ITEMS
 let NAV_ICON
 let ACCORDIONS
@@ -20,6 +21,7 @@ const prepareDOMElements = () => {
 	NAV = document.querySelector('.nav')
 	NAV_LIST = document.querySelector('.nav__list')
 	NAV_LIST_BTN = document.querySelector('.burger-btn')
+	NAV_LIST_BTN_BAR = document.querySelector('.burger-btn__bars')
 	ALL_NAV_ITEMS = document.querySelectorAll('.nav__item')
 	NAV_ICON = document.querySelector('.nav__icon')
 	ACCORDIONS = document.querySelectorAll('.accordion__box')
@@ -31,24 +33,29 @@ const prepareDOMElements = () => {
 
 const prepareDOMEvents = () => {
 	window.addEventListener('scroll', addShadow)
-	NAV_ICON.addEventListener('click', () => {
-		NAV_LIST.classList.remove('nav__list--active')
-		mobileBlock()
-	})
+	window.addEventListener('resize', specialWidth)
+	NAV_ICON.addEventListener('click', moveToTheTop)
 	NAV_LIST_BTN.addEventListener('click', handleNav)
 	currentYear()
 	observer.observe(COUNTER_BOX)
 	accordionSetup()
+	specialWidth()
+}
+
+const moveToTheTop = () => {
+	window.scrollTo(0, 0)
 }
 
 const handleNav = () => {
 	NAV_LIST.classList.toggle('nav__list--active')
 	BODY.classList.remove('scroll-block')
+	NAV_LIST_BTN_BAR.classList.toggle('burger-btn__bars--active')
 
 	ALL_NAV_ITEMS.forEach(item => {
 		item.addEventListener('click', () => {
 			NAV_LIST.classList.remove('nav__list--active')
 			BODY.classList.remove('scroll-block')
+			NAV_LIST_BTN_BAR.classList.remove('burger-btn__bars--active')
 		})
 	})
 
@@ -118,6 +125,13 @@ const accordionSetup = () => {
 			}
 		}
 	}
+}
+
+//SPECIAL-WIDTH
+
+const specialWidth = () => {
+	const accordionBox = document.querySelector('.accordion__box-span').clientWidth
+	document.documentElement.style.setProperty('--special-width', accordionBox + 'px')
 }
 
 document.addEventListener('DOMContentLoaded', main)

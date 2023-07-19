@@ -11,10 +11,27 @@ let INPUT_EMAIL
 let SELECT_TREATMENT
 let INPUT_AMOUNT
 let INPUT_DATE
+let INPUT_HOUR
 let POPUP_ICON
-let POPUP_FORM_BTN
-let POPUP_MESSAGE_BTN
 let INPUTS_ARRAY
+
+let SECOND_PROGRESS_BAR
+let THIRD_PROGRESS_BAR
+let FOURTH_PROGRESS_BAR
+let FIRST_FORM
+let SECOND_FORM
+let THIRD_FORM
+let FOURTH_FORM
+let FIRST_FORM_NEXT_BTN
+let SECOND_FORM_BACK_BTN
+let SECOND_FORM_NEXT_BTN
+let THIRD_FORM_BACK_BTN
+let THIRD_FORM_NEXT_BTN
+let FOURTH_FORM_BACK_BTN
+let FOURTH_FORM_SEND_BTN
+
+let ALL_INPUTS
+let ERROR_COUNT = 0
 
 const popupMain = () => {
 	popupPrepareDOMElements()
@@ -35,53 +52,109 @@ const popupPrepareDOMElements = () => {
 	SELECT_TREATMENT = document.querySelector('#popup-treatment')
 	INPUT_AMOUNT = document.querySelector('#popup-amount')
 	INPUT_DATE = document.querySelector('#popup-date')
-	POPUP_ICON = document.querySelector('.popup__box-icon')
-	POPUP_FORM_BTN = document.querySelector('.popup__box-btn')
-	POPUP_MESSAGE_BTN = document.querySelector('.popup__message-btn')
+	INPUT_HOUR = document.querySelector('#popup-time')
+	POPUP_ICON = document.querySelector('.popup__icon')
 	INPUTS_ARRAY = [INPUT_NAME, INPUT_LAST_NAME, INPUT_PHONE_NUMBER, INPUT_EMAIL, INPUT_AMOUNT]
+	SECOND_PROGRESS_BAR = document.querySelector('.popup__header-progressbar--second')
+	THIRD_PROGRESS_BAR = document.querySelector('.popup__header-progressbar--third')
+	FOURTH_PROGRESS_BAR = document.querySelector('.popup__header-progressbar--fourth')
+	FIRST_FORM = document.querySelector('.popup__form--first')
+	SECOND_FORM = document.querySelector('.popup__form--second')
+	THIRD_FORM = document.querySelector('.popup__form--third')
+	FOURTH_FORM = document.querySelector('.popup__form--fourth')
+	FIRST_FORM_NEXT_BTN = document.querySelector('.popup__buttons-btn--first-next')
+	SECOND_FORM_BACK_BTN = document.querySelector('.popup__buttons-btn--second-back')
+	SECOND_FORM_NEXT_BTN = document.querySelector('.popup__buttons-btn--second-next')
+	THIRD_FORM_BACK_BTN = document.querySelector('.popup__buttons-btn--third-back')
+	THIRD_FORM_NEXT_BTN = document.querySelector('.popup__buttons-btn--third-next')
+	FOURTH_FORM_BACK_BTN = document.querySelector('.popup__buttons-btn--fourth-back')
+	FOURTH_FORM_SEND_BTN = document.querySelector('.popup__buttons-btn--fourth-send')
+	ALL_INPUTS = document.querySelectorAll('.popup__box')
 }
 
 const popupPrepareDOMEvents = () => {
-	POPUP.addEventListener('touchstart', showPopup, { passive: true })
-	FIRST_SPECIAL_BTN.addEventListener('click', showPopup)
-	POPUP_ICON.addEventListener('click', closePopup)
-	POPUP_FORM_BTN.addEventListener('click', e => {
-		e.preventDefault()
+	POPUP.addEventListener('touchstart', showBookForm, { passive: true })
+	FIRST_SPECIAL_BTN.addEventListener('click', showBookForm)
+	POPUP_ICON.addEventListener('click', closeBookForm)
+	FIRST_FORM_NEXT_BTN.addEventListener('click', () => {
+		checkForm(INPUT_NAME)
+		checkForm(INPUT_LAST_NAME)
+		checkErrors()
 
-		checkForm(INPUTS_ARRAY)
+		if (ERROR_COUNT === 0) {
+			forwardToSecondForm()
+		}
+	})
+	SECOND_FORM_BACK_BTN.addEventListener('click', () => {
+		clearAllErrors()
+		backToFirstForm()
+	})
+	SECOND_FORM_NEXT_BTN.addEventListener('click', () => {
 		checkCharacters(INPUT_PHONE_NUMBER)
 		checkNumber(INPUT_PHONE_NUMBER, 9)
 		checkMail(INPUT_EMAIL)
+		checkErrors()
+
+		if (ERROR_COUNT === 0) {
+			forwardToThirdForm()
+		}
+	})
+	THIRD_FORM_BACK_BTN.addEventListener('click', () => {
+		clearAllErrors()
+		backToSecondForm()
+	})
+	THIRD_FORM_NEXT_BTN.addEventListener('click', () => {
 		checkSelect(SELECT_TREATMENT)
 		checkAmount(INPUT_AMOUNT)
-		checkDate(INPUT_DATE)
 		checkErrors()
+
+		if (ERROR_COUNT === 0) {
+			forwardToFourthForm()
+		}
 	})
-	POPUP_MESSAGE_BTN.addEventListener('click', refreshPopup)
+	FOURTH_FORM_BACK_BTN.addEventListener('click', () => {
+		clearAllErrors()
+		backToThirdForm()
+	})
+	FOURTH_FORM_SEND_BTN.addEventListener('click', e => {
+		e.preventDefault()
+
+		checkDate(INPUT_DATE)
+		checkHour(INPUT_HOUR)
+		checkErrors()
+
+		if (ERROR_COUNT === 0) {
+			INPUTS_ARRAY.forEach(el => {
+				el.value = ''
+			})
+
+			SELECT_TREATMENT.value = '0'
+			SELECT_TREATMENT.style.border = 'none'
+
+			FOURTH_FORM.style.display = 'none'
+			POPUP_MESSAGE.style.display = 'block'
+
+			setTimeout(() => {
+				window.location.href = '/'
+			}, 2500)
+		}
+	})
 }
 
-const showPopup = () => {
+const showBookForm = () => {
 	POPUP.classList.add('popup--active')
 	FIRST_SPECIAL_BTN.classList.add('button-box__item--active')
 	scrollBlock()
 }
 
-const closePopup = () => {
+const closeBookForm = () => {
 	POPUP.classList.remove('popup--active')
 	FIRST_SPECIAL_BTN.classList.remove('button-box__item--active')
 	setTimeout(() => {
 		BODY.classList.remove('scroll-block')
 		BODY.classList.remove('scroll-block-padding')
 		NAV.classList.remove('scroll-block-padding')
-	}, 100)
-}
-
-const refreshPopup = () => {
-	POPUP_MESSAGE.style.display = 'none'
-	closePopup()
-	setTimeout(() => {
-		POPUP_FORM.style.display = 'flex'
-	}, 300)
+	}, 150)
 }
 
 const showError = (input, msg) => {
@@ -98,29 +171,25 @@ const clearError = input => {
 	errorMsg.textContent = ''
 }
 
-const clearAll = () => {
-	INPUTS_ARRAY.forEach(el => {
-		el.value = ''
+const clearAllErrors = () => {
+	ALL_INPUTS.forEach(el => {
 		el.classList.remove('warning')
 	})
-	SELECT_TREATMENT.value = '0'
-	SELECT_TREATMENT.style.border = 'none'
-	FIRST_SPECIAL_BTN.classList.remove('button-box__item--active')
 }
 
-const checkForm = input => {
-	input.forEach(el => {
-		if (el.value === '') {
-			showError(el, el.placeholder)
-		} else {
-			clearError(el)
-		}
-	})
+const checkForm = el => {
+	const numbers = /[0-9]/
+
+	if (el.value === '' || el.value.match(numbers)) {
+		showError(el, el.placeholder)
+	} else {
+		clearError(el)
+	}
 }
 
 const checkNumber = (input, min) => {
 	if (input.value.length < min) {
-		showError(input, 'Numer składa się z przynajmniej 9 cyfr..')
+		showError(input, 'Numer składa się z min. 9 cyfr..')
 	}
 }
 
@@ -141,7 +210,7 @@ const checkMail = email => {
 	if (re.test(email.value)) {
 		clearError(email)
 	} else {
-		showError(email, 'Wprowadź poprawnie swój e-mail..')
+		showError(email, 'Wprowadź poprawnie e-mail..')
 	}
 }
 
@@ -154,8 +223,10 @@ const checkAmount = input => {
 }
 
 const limitAmount = () => {
-	if (INPUT_AMOUNT.value > 5) {
-		INPUT_AMOUNT.value = '5'
+	if (INPUT_AMOUNT.value > 20) {
+		INPUT_AMOUNT.value = '20'
+	} else if (INPUT_AMOUNT.value < 0) {
+		INPUT_AMOUNT.value = '0'
 	}
 }
 
@@ -177,21 +248,61 @@ const checkDate = date => {
 	}
 }
 
-const checkErrors = () => {
-	const allInputs = document.querySelectorAll('.popup__box')
-	let errorCount = 0
+const checkHour = hour => {
+	const re = /^([1]?[0-7]):([0, 3][0])?$/
 
-	allInputs.forEach(el => {
+	if(re.test(hour.value)) {
+		clearError(hour)
+	} else {
+		showError(hour, 'Pracujemy od 10:00 do 18:00..')
+	}
+	console.log(hour.value);
+}
+
+const checkErrors = () => {
+	ERROR_COUNT = 0
+
+	ALL_INPUTS.forEach(el => {
 		if (el.classList.contains('warning')) {
-			errorCount++
+			ERROR_COUNT++
 		}
 	})
+}
 
-	if (errorCount === 0) {
-		clearAll()
-		POPUP_MESSAGE.style.display = 'block'
-		POPUP_FORM.style.display = 'none'
-	}
+const backToFirstForm = () => {
+	FIRST_FORM.style.display = 'flex'
+	SECOND_FORM.style.display = 'none'
+	SECOND_PROGRESS_BAR.classList.remove('popup-progressbar-active')
+}
+
+const forwardToSecondForm = () => {
+	FIRST_FORM.style.display = 'none'
+	SECOND_FORM.style.display = 'flex'
+	SECOND_PROGRESS_BAR.classList.add('popup-progressbar-active')
+}
+
+const backToSecondForm = () => {
+	SECOND_FORM.style.display = 'flex'
+	THIRD_FORM.style.display = 'none'
+	THIRD_PROGRESS_BAR.classList.remove('popup-progressbar-active')
+}
+
+const forwardToThirdForm = () => {
+	SECOND_FORM.style.display = 'none'
+	THIRD_FORM.style.display = 'flex'
+	THIRD_PROGRESS_BAR.classList.add('popup-progressbar-active')
+}
+
+const backToThirdForm = () => {
+	THIRD_FORM.style.display = 'flex'
+	FOURTH_FORM.style.display = 'none'
+	FOURTH_PROGRESS_BAR.classList.remove('popup-progressbar-active')
+}
+
+const forwardToFourthForm = () => {
+	THIRD_FORM.style.display = 'none'
+	FOURTH_FORM.style.display = 'flex'
+	FOURTH_PROGRESS_BAR.classList.add('popup-progressbar-active')
 }
 
 const scrollBlock = () => {
