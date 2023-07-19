@@ -121,6 +121,7 @@
 
 		&__card {
 			height: 314px;
+			cursor: default;
 			border: none;
 
 			&--one,
@@ -131,6 +132,7 @@
 			&--six {
 				&:hover {
 					border: none;
+					box-shadow: none;
 				}
 			}
 
@@ -140,123 +142,90 @@
 			&--four::before,
 			&--five::before,
 			&--six::before {
-				background-image: url('../img/background-icons.jpg');
+				content: '';
+				@include mixin.specialCard;
+			}
+
+			&--one::before {
+				background-image: url('../img/aboutus-card-img/aboutus-card-img-first.jpg');
+			}
+
+			&--two::before {
+				background-image: url('../img/aboutus-card-img/aboutus-card-img-second.jpg');
+			}
+
+			&--three::before {
+				background-image: url('../img/aboutus-card-img/aboutus-card-img-third.jpg');
+			}
+
+			&--four::before {
+				background-image: url('../img/aboutus-card-img/aboutus-card-img-fourth.jpg');
+			}
+
+			&--five::before {
+				background-image: url('../img/aboutus-card-img/aboutus-card-img-fifth.jpg');
+			}
+
+			&--six::before {
+				background-image: url('../img/aboutus-card-img/aboutus-card-img-sixth.jpg');
+			}
+
+			&--one::after,
+			&--two::after,
+			&--three::after,
+			&--four::after,
+			&--five::after,
+			&--six::after {
+				content: '';
+				@include mixin.specialShadow
 			}
 
 			&--one::before,
 			&--three::before,
-			&--five::before {
-				left: 20px;
-			}
-
-			&--one:hover::before,
-			&--three:hover::before,
-			&--five:hover::before {
-				left: 0px;
-				animation: none;
+			&--five::before,
+			&--one::after,
+			&--three::after,
+			&--five::after {
+				left: 109%;
 			}
 
 			&--two::before,
 			&--four::before,
-			&--six::before {
-				right: 20px;
-			}
-
-			&--two:hover::before,
-			&--four:hover::before,
-			&--six:hover::before {
-				right: 0px;
-				animation: none;
+			&--six::before,
+			&--two::after,
+			&--four::after,
+			&--six::after {
+				right: 109%;
 			}
 
 			&--one {
 				grid-row: 1/2;
 				grid-column: 1/4;
-
-				&::before {
-					content: '';
-					@include mixin.specialCard;
-					animation: move-it-left 2.2s infinite;
-				}
-
-				&:hover::before {
-					transform: translateX(100%);
-				}
 			}
 
 			&--two {
 				grid-row: 2/3;
 				grid-column: 4/7;
-
-				&::before {
-					content: '';
-					@include mixin.specialCard;
-					animation: move-it-right 2s infinite;
-				}
-
-				&:hover::before {
-					transform: translateX(-100%);
-				}
 			}
 
 			&--three {
 				grid-row: 3/4;
 				grid-column: 1/4;
-
-				&::before {
-					content: '';
-					@include mixin.specialCard;
-					animation: move-it-left 2s infinite;
-				}
-
-				&:hover::before {
-					transform: translateX(100%);
-				}
 			}
 
 			&--four {
 				grid-row: 4/5;
 				grid-column: 4/7;
-
-				&::before {
-					content: '';
-					@include mixin.specialCard;
-					animation: move-it-right 1.6s infinite;
-				}
-
-				&:hover::before {
-					transform: translateX(-100%);
-				}
 			}
 
 			&--five {
 				grid-row: 5/6;
 				grid-column: 1/4;
-
-				&::before {
-					content: '';
-					@include mixin.specialCard;
-					animation: move-it-left 1.6s infinite;
-				}
-
-				&:hover::before {
-					transform: translateX(100%);
-				}
 			}
 
 			&--six {
 				grid-row: 6/7;
 				grid-column: 4/7;
-
-				&::before {
-					content: '';
-					@include mixin.specialCard;
-					animation: move-it-right 2.2s infinite;
-				}
-
-				&:hover::before {
-					transform: translateX(-100%);
-				}
 			}
 		}
 	}
