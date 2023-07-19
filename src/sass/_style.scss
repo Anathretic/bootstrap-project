@@ -759,6 +759,11 @@ body {
 		cursor: pointer;
 		transition: background-color 0.3s, box-shadow 0.3s;
 
+		&-span,
+		&-img {
+			border-radius: 8px;
+		}
+
 		&-span {
 			position: absolute;
 			display: flex;
@@ -767,14 +772,34 @@ body {
 			padding: 1em;
 			top: 0;
 			left: 0;
-			width: 70%;
+			width: 100%;
 			height: 100%;
+			background-color: rgba(0, 0, 0, 0.6);
 			text-align: center;
 			z-index: 2;
 		}
 
 		&-img {
-			display: none;
+			position: absolute;
+			display: block;
+			width: var(--special-width);
+			height: 250px;
+			border: 4mm ridge rgba(48, 113, 134, 0.7);
+			z-index: 1;
+
+			&--one {
+				background: url('dist/img/accordion-one-img.jpg');
+			}
+
+			&--two {
+				background: url('dist/img/accordion-two-img.jpg');
+			}
+
+			&--one,
+			&--two {
+				background-size: cover;
+				background-position: center;
+			}
 		}
 
 		&-content {
@@ -816,20 +841,8 @@ body {
 		}
 	}
 
-	&__box::after {
-		content: '\f055';
-		font-family: 'fontawesome';
-		font-size: 20px;
-		float: right;
-	}
-
-	&__box.is-open::after {
-		content: '\f056';
-	}
-
 	&__box:hover,
 	&__box.is-open {
-		background-color: colors.$darker-special-color;
 		box-shadow: 1px 5px 20px colors.$dark-color;
 	}
 }
