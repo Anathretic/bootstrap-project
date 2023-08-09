@@ -28,7 +28,7 @@
 	}
 
 	.header-img {
-		background-image: colors.$shadow, url('../img/header-img-big.jpg');
+		background-image: colors.$shadow, url('/dist/img/header-img-big.jpg');
 	}
 
 	.popup {
@@ -147,27 +147,27 @@
 			}
 
 			&--one::before {
-				background-image: url('../img/aboutus-card-img/aboutus-card-img-first.jpg');
+				background-image: url('/dist/img/aboutus-card-img/aboutus-card-img-first.jpg');
 			}
 
 			&--two::before {
-				background-image: url('../img/aboutus-card-img/aboutus-card-img-second.jpg');
+				background-image: url('/dist/img/aboutus-card-img/aboutus-card-img-second.jpg');
 			}
 
 			&--three::before {
-				background-image: url('../img/aboutus-card-img/aboutus-card-img-third.jpg');
+				background-image: url('/dist/img/aboutus-card-img/aboutus-card-img-third.jpg');
 			}
 
 			&--four::before {
-				background-image: url('../img/aboutus-card-img/aboutus-card-img-fourth.jpg');
+				background-image: url('/dist/img/aboutus-card-img/aboutus-card-img-fourth.jpg');
 			}
 
 			&--five::before {
-				background-image: url('../img/aboutus-card-img/aboutus-card-img-fifth.jpg');
+				background-image: url('/dist/img/aboutus-card-img/aboutus-card-img-fifth.jpg');
 			}
 
 			&--six::before {
-				background-image: url('../img/aboutus-card-img/aboutus-card-img-sixth.jpg');
+				background-image: url('/dist/img/aboutus-card-img/aboutus-card-img-sixth.jpg');
 			}
 
 			&--one::after,
