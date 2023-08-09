@@ -43,6 +43,7 @@ const handleNav = () => {
 	NAV_LIST.classList.toggle('nav__list--active')
 	BODY.classList.remove('scroll-block')
 	NAV_LIST_BTN_BAR.classList.toggle('burger-btn__bars--active')
+	NAV_LIST.scrollTo(0, 0)
 
 	ALL_NAV_ITEMS.forEach(item => {
 		item.addEventListener('click', () => {
