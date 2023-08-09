@@ -512,6 +512,7 @@ body {
 		transform: translateX(100%);
 		background-color: colors.$black-color;
 		transition: transform 0.7s, opacity 0.7s;
+		scroll-behavior: smooth;
 		overscroll-behavior-y: contain;
 		overflow-y: auto;
 		opacity: 0;
