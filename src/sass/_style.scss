@@ -17,7 +17,7 @@ html {
 }
 
 body {
-	background-image: url('../img/body-bg.jpg');
+	background-image: url('/dist/img/body-bg.jpg');
 	background-attachment: fixed;
 	color: colors.$white-color;
 	font-family: 'Montserrat', sans-serif;
@@ -555,7 +555,7 @@ body {
 }
 
 .header-img {
-	background-image: colors.$shadow, url('../img/header-img-small.jpg');
+	background-image: colors.$shadow, url('/dist/img/header-img-small.jpg');
 }
 
 .header {
@@ -586,6 +586,13 @@ body {
 		font-size: 1.8rem;
 	}
 
+	&__heading,
+	&__text {
+		&--error {
+			color: colors.$white-color;
+		}
+	}
+
 	&__btn {
 		margin-top: 2em;
 		padding: 0.8em 1.6em;
@@ -603,6 +610,15 @@ body {
 
 	&__chevron {
 		display: none;
+	}
+
+	&--shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
 	}
 }
 
@@ -788,11 +804,11 @@ body {
 			z-index: 1;
 
 			&--one {
-				background-image: url('../img/accordion-one-img.jpg');
+				background-image: url('/dist/img/accordion-one-img.jpg');
 			}
 
 			&--two {
-				background-image: url('../img/accordion-two-img.jpg');
+				background-image: url('/dist/img/accordion-two-img.jpg');
 			}
 
 			&--one,
@@ -915,7 +931,7 @@ body {
 
 .contact {
 	position: relative;
-	background-image: url('../img/footer-img.jpg');
+	background-image: url('/dist/img/footer-img.jpg');
 	background-position: bottom;
 	background-size: cover;
 	z-index: 0;

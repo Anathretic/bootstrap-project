@@ -4,7 +4,6 @@ let NAV_LIST
 let NAV_LIST_BTN
 let NAV_LIST_BTN_BAR
 let ALL_NAV_ITEMS
-let NAV_ICON
 let ACCORDIONS
 let DELAY_TIME
 let COUNTER_ITEMS
@@ -23,7 +22,6 @@ const prepareDOMElements = () => {
 	NAV_LIST_BTN = document.querySelector('.burger-btn')
 	NAV_LIST_BTN_BAR = document.querySelector('.burger-btn__bars')
 	ALL_NAV_ITEMS = document.querySelectorAll('.nav__item')
-	NAV_ICON = document.querySelector('.nav__icon')
 	ACCORDIONS = document.querySelectorAll('.accordion__box')
 	COUNTER_ITEMS = document.querySelectorAll('.achievement-number')
 	COUNTER_BOX = document.querySelector('.achievement-box')
@@ -34,16 +32,11 @@ const prepareDOMElements = () => {
 const prepareDOMEvents = () => {
 	window.addEventListener('scroll', addShadow)
 	window.addEventListener('resize', specialWidth)
-	NAV_ICON.addEventListener('click', moveToTheTop)
 	NAV_LIST_BTN.addEventListener('click', handleNav)
 	currentYear()
 	observer.observe(COUNTER_BOX)
 	accordionSetup()
 	specialWidth()
-}
-
-const moveToTheTop = () => {
-	window.scrollTo(0, 0)
 }
 
 const handleNav = () => {
