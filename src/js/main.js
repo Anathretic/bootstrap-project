@@ -50,6 +50,7 @@ const handleNav = () => {
 			NAV_LIST.classList.remove('nav__list--active')
 			BODY.classList.remove('scroll-block')
 			NAV_LIST_BTN_BAR.classList.remove('burger-btn__bars--active')
+			NAV_LIST.scrollTo(0, 0)
 		})
 	})
 
