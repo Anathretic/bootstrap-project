@@ -95,7 +95,7 @@ body {
 }
 
 .nav-shadow {
-	background-color: rgba(0, 0, 0, 0.97);
+	background-color: rgb(8, 8, 8);
 }
 
 .bounce-top {
@@ -368,7 +368,6 @@ body {
 		height: 60px;
 		width: 60px;
 		color: #fff;
-		background: black;
 		text-align: center;
 		text-decoration: none;
 		border: none;
@@ -965,7 +964,7 @@ body {
 }
 
 .footer {
-	padding: 3em;
+	padding: 1em;
 	background-color: colors.$dark-color;
 	text-align: center;
 

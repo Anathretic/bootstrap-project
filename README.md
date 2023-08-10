@@ -8,6 +8,8 @@ The booking form was based on the [Just-Paradise](https://github.com/Anathretic/
 
 Additionally, the navigation has been equipped with scroll-spy, thanks to which the user knows more precisely in which section he is.
 
+Project was realized in cooperation with a novice graphic/UI designer [MordercaZPrzestworzy](https://github.com/MordercaZPrzestworzy)
+
 ## Links & Tools
 
 **Used:** HTML, CSS (incl. SASS preprocessor), JavaScript (incl. Intersection Observer), Gulp
