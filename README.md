@@ -4,11 +4,11 @@
 
 An example of a spa salon website with a well-planned UI that allows to quickly book a treatment via the booking form that appears after clicking the button on the left side of a screen.
 
-The booking form was based on the [Just-Paradise](https://github.com/Anathretic/second-site) form, but a 4th page was also added. The achievement bar below the reviews shows the use of Intersection Observer.
+## Coding & Problems
 
-Additionally, the navigation has been equipped with scroll-spy, thanks to which the user knows more precisely in which section he is.
+The site is not too different from [Just-Paradise](https://github.com/Anathretic/second-site), but it was created as a sandbox where I could practice Bootstrap or creating my own scroll-spy. The form is also taken from [Just-Paradise](https://github.com/Anathretic/second-site) but the achievement bar below the reviews shows the use of Intersection Observer.
 
-Project was realized in cooperation with a novice graphic/UI designer [MordercaZPrzestworzy](https://github.com/MordercaZPrzestworzy)
+Project was realized in cooperation with a graphic/UI designer [Julia Hyz](https://pl.linkedin.com/in/julia-hyz-098288274).
 
 ## Links & Tools
 
