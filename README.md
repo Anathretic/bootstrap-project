@@ -13,5 +13,3 @@ Project was realized in cooperation with a graphic/UI designer [Julia Hyz](https
 ## Links & Tools
 
 **Used:** HTML, SASS (CSS preprocessor), JavaScript (incl. Intersection Observer), Gulp
-
-**URL:** [For-You](https://foryou-spa.online/)
